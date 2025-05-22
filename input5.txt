@@ -1,0 +1,39 @@
+int main() {
+
+    int num = 6;
+    float count_double = 0.0;
+	int j;
+	float teste = 1.0;
+	float teste2 = 2.0;
+
+    while ( num <= 10 ) {
+    	count_double = count_double+2.4;
+    	num = num + 1;
+    }
+
+    float var = 3.5;
+
+    int age = 6;
+    int level;
+
+    if (age < 18) {
+	    level = 1;
+    } else {
+	    if (age <= 60) {
+	      level = 2;
+    	} else {
+	      level = 3;
+    	}
+    }
+	
+	for(int i = 7; i > level; i--){
+	
+		teste = teste + 0.5;
+	}
+	
+	for(j = 0; j < level; j++){
+	
+		teste2 = teste2 + 1.5;
+	}
+	
+};

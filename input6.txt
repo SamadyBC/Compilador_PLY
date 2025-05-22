@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+
+    int num = 6;
+    float count_double = 0;
+	int j;
+	float teste = 1.0;
+	float teste2 = 2.0;
+
+    while ( num <= 10 ) {
+    	count_double = count_double+2.4;
+    	num = num + 1;
+    	printf("count_double: %f\n", count_double);
+    	printf("num: %d\n", num);
+    }
+
+    float var = 3.5;
+
+    int age = 6;
+    int level = 0;
+
+    if (age < 18) {
+	    level = 1;
+    } else {
+	    if (age <= 60) {
+	      level = 2;
+    	} else {
+	      level = 3;
+    	}
+    }
+	
+	printf("level: %d\n", level);
+	
+	for(int i = 7; i > level; i--){
+	
+		teste = teste + 0.5;
+		printf("teste: %f\n", teste);
+    	printf("i: %d\n", i);
+	
+	}
+	
+	for(j = 0; j < level; j++){
+	
+		teste2 = teste2 + 1.5;
+		printf("teste2: %f\n", teste2);
+    	printf("j: %d\n", j);
+	
+	}
+	
+	return 0;
+};

@@ -1,0 +1,11 @@
+int main() {
+
+	int level = 7;
+	float teste = 1.0;
+	int i; 
+	
+	for(i = 7; i > 0; i--){
+		teste = teste + 0.5;
+	}
+	
+};
