@@ -1,4 +1,5 @@
 int main(){
+	int a, b, resultado;
 	int var;
 	int teste = 5;
 };

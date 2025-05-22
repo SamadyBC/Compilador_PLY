@@ -3,6 +3,19 @@
 from ply import *
 import logging
 
+class ErroSemantico(Exception):
+    """Exceção para erros semânticos durante a análise"""
+    def __init__(self, mensagem):
+        self.mensagem = mensagem
+        super().__init__(self.mensagem)
+
+def verificar_variavel_declarada(nome_var, linha=0):
+    """Verifica se uma variável já foi declarada e lança exceção se for o caso"""
+    if nome_var in simbolos:
+        #return True
+        raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' já declarada")
+    return False
+
 contexto = 0
 
 def get_contexto():
@@ -74,6 +87,7 @@ def t_error(t):
 # Constroi o analisador léxico
 lexer = lex.lex()
 
+
 # Define-se os procedimentos associados as regras de
 # produção da gramática (também é quando definimos a gramática)
 
@@ -119,40 +133,78 @@ def p_declaracoes(p):
     
     # Caso de declaração com múltiplas variáveis (tipos declaracoes_linha SEMICOLON)
     if len(p) >= 3 and p[2] is None:
+        print(simbolos.keys())
+        print(simbolos.items())
+        for chave, valor in simbolos.items():
+            # Verificando se o atributo em_linha é True
+            if valor.get('em_linha') == True:
+                # Atualizando o atributo tipo
+                simbolos[chave]['tipo'] = tipo
+                print(f"Atualizado tipo da variável '{chave}' para '{tipo}'")
         print('Declaracao realizada em linha')
     
     # Caso de declaração simples (tipos ID SEMICOLON)
-    elif len(p) >= 3 and isinstance(p[2], str):
-        print('Declaracao simples (tipos ID SEMICOLON)')
-        if p[2] in simbolos:
-            print(f"Erro semantico: variavel '{p[2]}' ja declarada")
-        else:
-            simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto()}
+    elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";":
+        try:
+            verificar_variavel_declarada(p[2], p.lineno(2))
+            simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada variável '{p[2]}' do tipo '{tipo}'")
+        except ErroSemantico as e:
+            # Cria um token de erro com a mensagem
+            error_token = yacc.YaccSymbol()
+            error_token.type = 'ERROR'
+            error_token.value = 'error'
+            error_token.error_message = str(e)
+            
+            # Substitui o token atual pelo token de erro
+            p_error(error_token)
+            
+            # Interrompe o parsing
+            raise SyntaxError("Parsing interrompido devido a erro semântico")
     
-    # Caso de declaração com inicialização (tipos ID EQUALS values SEMICOLON)
+    # Caso de declaração com inicialização
     elif len(p) >= 5 and p[3] == '=':
-        print('Declaracao com inicialização (tipos ID EQUALS values SEMICOLON)')
-        if p[2] in simbolos:
-            print(f"Erro semantico: variavel '{p[2]}' ja declarada")
-        else:
+        try:
+            verificar_variavel_declarada(p[2], p.lineno(2))
             valor = p[4]
-            simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto()}
+            simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
-    
+        except ErroSemantico as e:
+            # Cria um token de erro com a mensagem
+            error_token = yacc.YaccSymbol()
+            error_token.type = 'ERROR'
+            error_token.value = 'error'
+            error_token.error_message = str(e)
+            
+            # Substitui o token atual pelo token de erro
+            p_error(error_token)
+            
+            # Interrompe o parsing
+            raise SyntaxError("Parsing interrompido devido a erro semântico")
+            
     print(f"Reconheci Declarações {tipo} {p[2] if isinstance(p[2], str) else ''} {p[3]}")
 
 def p_declaracao_linha(p):
     '''declaracoes_linha : ID COMMA declaracoes_linha
                         | ID'''
-     # Captura o tipo da declaração do nó pai (que deve ser propagado)
-    tipo = p[-1]  # Acessa o tipo do nó pai
-    
-    if p[1] in simbolos:
-        print(f"Erro semantico: variavel '{p[1]}' ja declarada")
-    else:
-        simbolos[p[1]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto()}
-        print(f"Declarada variável '{p[1]}' do tipo '{tipo}'")
+
+    try:
+        verificar_variavel_declarada(p[1], p.lineno(1))
+        simbolos[p[1]] = {'valor': None, 'tipo': None, 'contexto': get_contexto(), 'em_linha': True}
+        print(f"Declarada variável '{p[1]}'")
+    except ErroSemantico as e:
+        # Cria um token de erro com a mensagem
+        error_token = yacc.YaccSymbol()
+        error_token.type = 'ERROR'
+        error_token.value = 'error'
+        error_token.error_message = str(e)
+        
+        # Substitui o token atual pelo token de erro
+        p_error(error_token)
+        
+        # Interrompe o parsing
+        raise SyntaxError("Parsing interrompido devido a erro semântico")
+
     
     # Propaga os IDs para o nó pai
     if len(p) > 2:
@@ -242,14 +294,17 @@ def p_values(p):
     p[0] = p[1]
     
 def p_error(p):
-    if p:
+    if hasattr(p, 'error_message'):
+        # Erro semântico personalizado
+        print(p.error_message)
+    elif p:
         print(f"Erro de sintaxe na linha {p.lineno}: token '{p.value}'")
         print(f"Tipo do token: {p.type}")
     else:
-        print("Erro de sintaxe no final do arquivo (EOF)")
+        print("Erro de sintaxe no final do arquivo (EOF)")  
 
-
-yacc.yacc()
+# Constroi o analisador sintático
+parser = yacc.yacc()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -269,5 +324,8 @@ lexer.input(data)
 for tok in lexer:
      print(tok)
 
-# chama o parser
-yacc.parse(data, debug=logging.getLogger())
+# chama o parser\
+try:
+    parser.parse(data, debug=logging.getLogger())
+except SyntaxError as e:
+    print(f"Compilação interrompida: {e}")
