@@ -9,12 +9,20 @@ class ErroSemantico(Exception):
         self.mensagem = mensagem
         super().__init__(self.mensagem)
 
-def verificar_variavel_declarada(nome_var, linha=0):
+def verificar_variavel_redeclarada(nome_var, linha=0):
     """Verifica se uma variável já foi declarada e lança exceção se for o caso"""
     if nome_var in simbolos:
         #return True
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' já declarada")
     return False
+
+def verificar_variavel_usada(nome_var, linha=0):
+    """Verifica se uma variável foi declarada antes de ser usada"""
+    if nome_var not in simbolos:
+        raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada mas não declarada")
+    return True
+
+
 
 contexto = 0
 
@@ -88,6 +96,20 @@ def t_error(t):
 lexer = lex.lex()
 
 
+def verificar_tipo_token(token, lexer):
+    '''Verifica qual o tipo do token e retorna o tipo correspondente'''
+    while True:
+        tok = lexer.token()
+        if not tok:
+            break  # Fim dos tokens
+        print(tok)
+        if tok.value == token:
+            print(f"Token encontrado: {tok.type} - {tok.value}")
+            return tok.type
+    return None
+    # Percorre os tokens do lexer e verifica se o token existe
+    
+
 # Define-se os procedimentos associados as regras de
 # produção da gramática (também é quando definimos a gramática)
 
@@ -99,7 +121,11 @@ lexer = lex.lex()
 def p_inicial(p):
     '''inicial : INT MAIN LPAREN RPAREN bloco_principal SEMICOLON'''
     print("Reconheci INICIAL")
-    print(simbolos)
+    print("\n=== Compilação concluída com sucesso ===")
+    print("\nTabela de Símbolos:")
+    for var, info in simbolos.items():
+        print(f"  {var}: {info}")
+    print("\n=== Fim da compilação ===")
 
 def p_bloco_principal(p):
     '''bloco_principal : LBRACES corpo RBRACES'''
@@ -126,8 +152,13 @@ def p_declaracoes(p):
     '''declaracoes : tipos ID SEMICOLON 
                 | tipos declaracoes_linha SEMICOLON
                 | tipos ID EQUALS values SEMICOLON
+                | tipos ID EQUALS ID SEMICOLON
+                | tipos ID EQUALS operacao_aritmetica SEMICOLON
                 | tipos ID SEMICOLON declaracoes
-                | tipos ID EQUALS values SEMICOLON declaracoes'''
+                | tipos declaracoes_linha SEMICOLON declaracoes
+                | tipos ID EQUALS values SEMICOLON declaracoes
+                | tipos ID EQUALS ID SEMICOLON declaracoes
+                | tipos ID EQUALS operacao_aritmetica SEMICOLON declaracoes'''
     # Armazena o tipo para uso posterior
     tipo = p[1]
     
@@ -146,7 +177,7 @@ def p_declaracoes(p):
     # Caso de declaração simples (tipos ID SEMICOLON)
     elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";":
         try:
-            verificar_variavel_declarada(p[2], p.lineno(2))
+            verificar_variavel_redeclarada(p[2], p.lineno(2))
             simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada variável '{p[2]}' do tipo '{tipo}'")
         except ErroSemantico as e:
@@ -165,7 +196,12 @@ def p_declaracoes(p):
     # Caso de declaração com inicialização
     elif len(p) >= 5 and p[3] == '=':
         try:
-            verificar_variavel_declarada(p[2], p.lineno(2))
+            verificar_variavel_redeclarada(p[2], p.lineno(2))
+            verificar_tipo_token(p[4], lexer)
+            if isinstance(p[4], str):
+                print("Teste0")
+                verificar_variavel_usada(p[4], p.lineno(4))
+
             valor = p[4]
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
@@ -189,7 +225,7 @@ def p_declaracao_linha(p):
                         | ID'''
 
     try:
-        verificar_variavel_declarada(p[1], p.lineno(1))
+        verificar_variavel_redeclarada(p[1], p.lineno(1))
         simbolos[p[1]] = {'valor': None, 'tipo': None, 'contexto': get_contexto(), 'em_linha': True}
         print(f"Declarada variável '{p[1]}'")
     except ErroSemantico as e:
@@ -242,13 +278,38 @@ def p_condicao_for(p):
 #    print("Reconheci bloco condicao_for")
 
 def p_atribuicao(p):
-    ''' atribuicao : tipos ID EQUALS values SEMICOLON
-                | ID EQUALS values SEMICOLON
-                | tipos ID EQUALS ID SEMICOLON
+    ''' atribuicao : ID EQUALS values SEMICOLON
                 | ID EQUALS ID SEMICOLON
-                | tipos ID EQUALS operacao_aritmetica SEMICOLON
                 | ID EQUALS operacao_aritmetica SEMICOLON'''
-#    print("Reconheci bloco atribuicao", p[1], p[2])
+    print("Reconheci bloco atribuicao", p[1], p[2])
+    # Verifica se a variável foi declarada antes de atribuir
+    try:
+        print("Teste")
+        verificar_variavel_usada(p[1], p.lineno(1))
+        # Verifica se o termo a ser atribuído é uma variável
+        if len(p) >= 4 and isinstance(p[3], str):
+            print("Teste2")
+            verificar_variavel_usada(p[3], p.lineno(3))
+        # Atribui o valor à variável    
+        if len(p) >= 4:
+            valor = p[3]
+            simbolos[p[1]]['valor'] = valor
+    except ErroSemantico as e:
+        # Cria um token de erro com a mensagem
+        error_token = yacc.YaccSymbol()
+        error_token.type = 'ERROR'
+        error_token.value = 'error'
+        error_token.error_message = str(e)
+        
+        # Substitui o token atual pelo token de erro
+        p_error(error_token)
+        
+        # Interrompe o parsing
+        raise SyntaxError("Parsing interrompido devido a erro semântico")
+
+# | tipos ID EQUALS values SEMICOLON
+# | tipos ID EQUALS ID SEMICOLON
+# | tipos ID EQUALS operacao_aritmetica SEMICOLON - adicionar as declaracoes
 
 def p_operacao_aritmetica(p):
     ''' operacao_aritmetica : ID operadores_aritmeticos ID
@@ -312,7 +373,7 @@ logging.basicConfig(
 )
 
 # entrada do arquivo
-file = open("input8.txt",'r')
+file = open("input7.txt",'r')
 data = file.read()
 
 # data = 'int main();'
@@ -322,7 +383,8 @@ lexer.input(data)
 
 # Tokenização
 for tok in lexer:
-     print(tok)
+    print(tok)
+    print(tok.type, tok.value, tok.lineno, tok.lexpos)
 
 # chama o parser\
 try:

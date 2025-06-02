@@ -3,6 +3,7 @@
 This repository contains a lexical and syntactic analyzer for a subset of the C programming language. It is implemented in Python using the `ply` (Python Lex-Yacc) library.
 
 The analyzer can:
+
 - Tokenize input code written in the C-like language.
 - Parse the token stream according to a defined grammar to identify valid program structures.
 
@@ -37,15 +38,24 @@ The repository contains the following key files:
 
 This analyzer provides a basic framework. Here are some potential areas for future development:
 
--   **Semantic Analysis**: Implement checks for semantic correctness, such as type compatibility in expressions, variable declaration before use (though some basic checks are present), and scope resolution.
--   **Intermediate Code Generation**: Extend the parser to generate an intermediate representation (e.g., three-address code) of the input program.
--   **Target Code Generation**: Further extend to compile the intermediate code into machine code for a specific architecture or into another high-level language.
--   **Enhanced Error Reporting**: Improve error messages to be more specific and provide better guidance on how to fix syntax or semantic errors.
--   **Expanded Grammar**: Add support for more C language features, such as:
-    -   Pointers
-    -   Structs and Unions
-    -   Functions with parameters and return values (beyond the basic `main` structure)
-    -   More complex expressions and statements
-    -   Preprocessor directives
--   **More Comprehensive Test Suite**: Develop a wider range of test cases, including edge cases and invalid inputs, to ensure robustness.
--   **Symbol Table Enhancements**: Improve the symbol table to handle scopes more effectively and store more information about identifiers.
+- **Semantic Analysis**: Implement checks for semantic correctness, such as type compatibility in expressions, variable declaration before use (though some basic checks are present), and scope resolution.
+- **Intermediate Code Generation**: Extend the parser to generate an intermediate representation (e.g., three-address code) of the input program.
+- **Target Code Generation**: Further extend to compile the intermediate code into machine code for a specific architecture or into another high-level language.
+- **Enhanced Error Reporting**: Improve error messages to be more specific and provide better guidance on how to fix syntax or semantic errors.
+- **Expanded Grammar**: Add support for more C language features, such as:
+  - Pointers
+  - Structs and Unions
+  - Functions with parameters and return values (beyond the basic `main` structure)
+  - More complex expressions and statements
+  - Preprocessor directives
+- **More Comprehensive Test Suite**: Develop a wider range of test cases, including edge cases and invalid inputs, to ensure robustness.
+- **Symbol Table Enhancements**: Improve the symbol table to handle scopes more effectively and store more information about identifiers.
+
+## TO DO & Issues:
+
+- Fix the verification of redeclaration to the new declaration structures. (tipos ID EQUALS ID SEMICOLON and tipos ID EQUALS operacao_aritmetica SEMICOLON) -
+- In the case of: tipos ID EQUALS ID SEMICOLON. Make sure that the second ID was declared before being used. - verificar_variavel_usada(arg,arg)
+- Arithmetic operations are not returning the result of the operation to the table of data. It is important and must be fixed.
+- Implement `return 0` to make the code more similar to actual C code.
+- Standardize the aux function to have the same return pattern.
+- Fix the way a number is being interpreted. In my case the 2 is being read as a string.
