@@ -2,7 +2,6 @@ int main()
 {
     int a, b;
 	int c = d;
-	int resultado = 2;
     if(a >= 10){
          resultado = a -  b;
     }else{

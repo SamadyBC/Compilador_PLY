@@ -22,8 +22,6 @@ def verificar_variavel_usada(nome_var, linha=0):
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada mas não declarada")
     return True
 
-
-
 contexto = 0
 
 def get_contexto():
@@ -197,9 +195,8 @@ def p_declaracoes(p):
     elif len(p) >= 5 and p[3] == '=':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
-            verificar_tipo_token(p[4], lexer)
-            if isinstance(p[4], str):
-                print("Teste0")
+            if isinstance(p[4], str): # Esta abordagem provavelmente nao funciona pois tudo eh interpretado como string
+                print(p[4])
                 verificar_variavel_usada(p[4], p.lineno(4))
 
             valor = p[4]
