@@ -96,10 +96,10 @@ def t_error(t):
 lexer = lex.lex()
 
 
-def verificar_tipo_token(token, lexer):
+def verificar_tipo_token(token): # remover essa funcao do codigo
     '''Verifica qual o tipo do token e retorna o tipo correspondente'''
     while True:
-        tok = lexer.token()
+        #tok = lexer.token()
         if not tok:
             break  # Fim dos tokens
         print(tok)
@@ -175,7 +175,7 @@ def p_declaracoes(p):
         print('Declaracao realizada em linha')
     
     # Caso de declaração simples (tipos ID SEMICOLON)
-    elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";":
+    elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";": # Abordagem disfuncional uma vez que isinstance sempre retorna True, ja que todos os termos sao strings - realizar testes
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
             simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
@@ -197,10 +197,17 @@ def p_declaracoes(p):
     elif len(p) >= 5 and p[3] == '=':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
-            verificar_tipo_token(p[4], lexer)
-            if isinstance(p[4], str):
-                print("Teste0")
+            #verificar_tipo_token(p[4], lexer)
+            print(f"p[4]: '{p.slice[4].value}' - '{p[4]}'")
+            if p.slice[4].type == 'ID':
                 verificar_variavel_usada(p[4], p.lineno(4))
+
+            if p.slice[4].type == 'values':
+                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o tipo do literal
+                print("Verificando tipo de literal:", p.slice[4].value)
+            if p.slice[4].type == 'operacao_aritmetica':
+                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
+                print("Verificando tipo de literal:", p.slice[4].value)
 
             valor = p[4]
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
@@ -281,16 +288,24 @@ def p_atribuicao(p):
     ''' atribuicao : ID EQUALS values SEMICOLON
                 | ID EQUALS ID SEMICOLON
                 | ID EQUALS operacao_aritmetica SEMICOLON'''
-    print("Reconheci bloco atribuicao", p[1], p[2])
+    
     # Verifica se a variável foi declarada antes de atribuir
     try:
         print("Teste")
         verificar_variavel_usada(p[1], p.lineno(1))
         # Verifica se o termo a ser atribuído é uma variável
-        if len(p) >= 4 and isinstance(p[3], str):
+        if len(p) >= 4 and isinstance(p[3], str): #Essa abordagem provavelmente nao eh funcional pois todos os termos sao strings
             print("Teste2")
-            verificar_variavel_usada(p[3], p.lineno(3))
-        # Atribui o valor à variável    
+            if p.slice[3].type == 'ID':
+                verificar_variavel_usada(p[3], p.lineno(3))
+            if p.slice[3].type == 'values':
+                print("Verificando tipo de literal:", p.slice[3].value)
+            if p.slice[3].type == 'operacao_aritmetica':
+                print("Verificando tipo de literal:", p.slice[3].value)
+            # Atribui o valor à variável
+            valor = p[3]
+            simbolos[p[1]]['valor'] = valor
+
         if len(p) >= 4:
             valor = p[3]
             simbolos[p[1]]['valor'] = valor
@@ -306,6 +321,7 @@ def p_atribuicao(p):
         
         # Interrompe o parsing
         raise SyntaxError("Parsing interrompido devido a erro semântico")
+    print("Reconheci bloco atribuicao", p[1], p[2])
 
 # | tipos ID EQUALS values SEMICOLON
 # | tipos ID EQUALS ID SEMICOLON
@@ -316,6 +332,29 @@ def p_operacao_aritmetica(p):
                     | ID operadores_aritmeticos values
                     | values operadores_aritmeticos ID
                     | values operadores_aritmeticos values'''
+    if p.slice[1].type == 'ID':
+        verificar_variavel_usada(p[1], p.lineno(1))
+        # Idealmente, aqui você também pegaria o valor e tipo de simbolos[p[1]]
+        # para realizar a operação e a checagem de tipos.
+        # Ex: val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
+    # else: # Veio de 'values'
+        # val1, tipo1 = p[1], tipo_de_literal(p[1]) # função hipotética
+
+    # Verificar o segundo operando se for um ID
+    if p.slice[3].type == 'ID':
+        print("Verificando variável usada:", p[3])
+        verificar_variavel_usada(p[3], p.lineno(3))
+        # Idealmente: val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
+    # else: # Veio de 'values'
+        # val2, tipo2 = p[3], tipo_de_literal(p[3])
+    
+    # Aqui você faria a operação aritmética e a checagem de tipos.
+    # Por simplicidade, vamos focar apenas na verificação de uso.
+    # O resultado da operação (p[0]) deveria ser o valor calculado.
+    # Como o cálculo não é o foco aqui, vamos apenas retornar um placeholder ou None.
+    # Se você retornar None, p_declaracoes precisa estar ciente disso.
+    # Para o propósito de apenas verificar o uso, p[0] não precisa ser sofisticado ainda.
+    p[0] = "resultado_operacao_aritmetica" # Placeholder. Em um sistema real, seria o valor.
 #    print("Reconheci bloco operacoes aritmeticas")
 
 def p_condicao(p):
@@ -379,12 +418,12 @@ data = file.read()
 # data = 'int main();'
 
 # string de teste como entrada do analisador léxico
-lexer.input(data)
+#lexer.input(data)
 
 # Tokenização
-for tok in lexer:
-    print(tok)
-    print(tok.type, tok.value, tok.lineno, tok.lexpos)
+#for tok in lexer:
+#    print(tok)
+#    print(tok.type, tok.value, tok.lineno, tok.lexpos)
 
 # chama o parser\
 try:

@@ -1,8 +1,9 @@
 int main()
 {
     int a, b;
-	int c = d;
-	int resultado = 2;
+	int c = 0;
+	int resultado = 2 + a;
+	d = b;
     if(a >= 10){
          resultado = a -  b;
     }else{

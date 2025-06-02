@@ -59,3 +59,4 @@ This analyzer provides a basic framework. Here are some potential areas for futu
 - Implement `return 0` to make the code more similar to actual C code.
 - Standardize the aux function to have the same return pattern.
 - Fix the way a number is being interpreted. In my case the 2 is being read as a string.
+- Refactor the code and create a single function responsible for raising exceptions

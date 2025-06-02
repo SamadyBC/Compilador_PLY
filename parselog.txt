@@ -7658,3 +7658,1108 @@ ERROR:root:Error  : INT MAIN . error
 ERROR:root:Error  : INT . error
 ERROR:root:Error  : . error
 ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x28e37ad1d40> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa7148e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa7148e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x28e37ad1ec0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x28e37ad1f50> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa7155e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2360dc11800> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa7174e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa7174e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2360dc11980> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2360dc119e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa7181e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x117f1471770> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa7878e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa7878e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x117f14718f0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x117f1471950> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa7885e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e27e531890> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e27e531a10> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e27e531a40> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19196fa1800> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19196fa19e0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19196fa1a70> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x147a97417d0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x147a97419b0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x147a9741a40> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2508a8a17d0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2508a8a19b0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2508a8a1a40> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2331b111920> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2331b111a70> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2331b111ad0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS ID SEMICOLON declaracoes] with ['int','c','=','d',';',None] and goto state 56
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c722e41c80> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c722e41dd0> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c722e41e30> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS ID SEMICOLON declaracoes] with ['int','c','=','d',';',None] and goto state 56
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a6ba441e00> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a6ba441f80> ('int')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a6ba442010> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 95
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS ID SEMICOLON declaracoes] with ['int','c','=','d',';',None] and goto state 56
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,65)
+ERROR:root:Error  : . LexToken(ID,'a',1,66)
+ERROR:root:Error  : . LexToken(GE,'>=',1,68)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,71)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,73)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,74)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,85)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,95)
+ERROR:root:Error  : . LexToken(ID,'a',1,97)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,99)
+ERROR:root:Error  : . LexToken(ID,'b',1,102)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,103)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,109)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,110)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,114)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,125)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,135)
+ERROR:root:Error  : . LexToken(ID,'a',1,137)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,139)
+ERROR:root:Error  : . LexToken(ID,'b',1,142)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,143)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,149)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,151)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,152)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2591c571dd0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2591c571f50> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2591c571f20> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,73)
+ERROR:root:Error  : . LexToken(ID,'a',1,74)
+ERROR:root:Error  : . LexToken(GE,'>=',1,76)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,79)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,81)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,82)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,93)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,103)
+ERROR:root:Error  : . LexToken(ID,'a',1,105)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,107)
+ERROR:root:Error  : . LexToken(ID,'b',1,110)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,111)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,117)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,118)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,122)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,133)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,143)
+ERROR:root:Error  : . LexToken(ID,'a',1,145)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,147)
+ERROR:root:Error  : . LexToken(ID,'b',1,150)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,151)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,157)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,159)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,160)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ab0e071e30> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ab0e071fb0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ab0e071fe0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa78e1e838> ('2')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','resultado','=','2',';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa78d4e1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,73)
+ERROR:root:Error  : . LexToken(ID,'a',1,74)
+ERROR:root:Error  : . LexToken(GE,'>=',1,76)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,79)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,81)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,82)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,93)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,103)
+ERROR:root:Error  : . LexToken(ID,'a',1,105)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,107)
+ERROR:root:Error  : . LexToken(ID,'b',1,110)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,111)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,117)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,118)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,122)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,133)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,143)
+ERROR:root:Error  : . LexToken(ID,'a',1,145)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,147)
+ERROR:root:Error  : . LexToken(ID,'b',1,150)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,151)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,157)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,159)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,160)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2794b9fa4f0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2794b9fa670> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2794b9fa700> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b19c12a4f0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b19c12a670> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b19c12a700> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['1'] and goto state 84
+INFO:root:Result : <str @ 0x7ffa444ce808> ('1')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['2',None,'1'] and goto state 53
+INFO:root:Result : <str @ 0x1b19bd3c080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',<str @ 0x1b19bd3c080>,';'] and goto state 96
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17c9534a460> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17c9534a5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17c9534a670> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['1'] and goto state 84
+INFO:root:Result : <str @ 0x7ffa444ce808> ('1')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['2',None,'1'] and goto state 53
+INFO:root:Result : <str @ 0x17c94f5c080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',<str @ 0x17c94f5c080>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,77)
+ERROR:root:Error  : . LexToken(ID,'a',1,78)
+ERROR:root:Error  : . LexToken(GE,'>=',1,80)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,83)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,85)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,86)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,97)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,107)
+ERROR:root:Error  : . LexToken(ID,'a',1,109)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,111)
+ERROR:root:Error  : . LexToken(ID,'b',1,114)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,115)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,121)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,122)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,126)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,137)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,147)
+ERROR:root:Error  : . LexToken(ID,'a',1,149)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,151)
+ERROR:root:Error  : . LexToken(ID,'b',1,154)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,155)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,161)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,163)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,164)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17a45c7a460> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17a45c7a5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17a45c7a670> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1adcc90a520> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1adcc90a6a0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1adcc90a790> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x276ad4be370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x276ad4be4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x276ad4be5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['1'] and goto state 84
+INFO:root:Result : <str @ 0x7ffa444ce808> ('1')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['2',None,'1'] and goto state 53
+INFO:root:Result : <str @ 0x276ad0cc080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',<str @ 0x276ad0cc080>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,77)
+ERROR:root:Error  : . LexToken(ID,'a',1,78)
+ERROR:root:Error  : . LexToken(GE,'>=',1,80)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,83)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,85)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,86)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,97)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,107)
+ERROR:root:Error  : . LexToken(ID,'a',1,109)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,111)
+ERROR:root:Error  : . LexToken(ID,'b',1,114)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,115)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,121)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,122)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,126)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,137)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,147)
+ERROR:root:Error  : . LexToken(ID,'a',1,149)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,151)
+ERROR:root:Error  : . LexToken(ID,'b',1,154)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,155)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,161)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,163)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,164)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f15e4ce370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f15e4ce4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f15e4ce5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'b'] and goto state 53
+INFO:root:Result : <str @ 0x1f15e0dc080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',<str @ 0x1f15e0dc080>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,77)
+ERROR:root:Error  : . LexToken(ID,'a',1,78)
+ERROR:root:Error  : . LexToken(GE,'>=',1,80)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,83)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,85)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,86)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,97)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,107)
+ERROR:root:Error  : . LexToken(ID,'a',1,109)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,111)
+ERROR:root:Error  : . LexToken(ID,'b',1,114)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,115)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,121)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,122)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,126)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,137)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,147)
+ERROR:root:Error  : . LexToken(ID,'a',1,149)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,151)
+ERROR:root:Error  : . LexToken(ID,'b',1,154)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,155)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,161)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,163)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,164)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19ad03ee370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19ad03ee4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x19ad03ee5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26b6d0ee370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26b6d0ee4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26b6d0ee5e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'a'] and goto state 53
+INFO:root:Result : <str @ 0x26b6ccfc080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',<str @ 0x26b6ccfc080>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,77)
+ERROR:root:Error  : . LexToken(ID,'a',1,78)
+ERROR:root:Error  : . LexToken(GE,'>=',1,80)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,83)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,85)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,86)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,97)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,107)
+ERROR:root:Error  : . LexToken(ID,'a',1,109)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,111)
+ERROR:root:Error  : . LexToken(ID,'b',1,114)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,115)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,121)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,122)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,126)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,137)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,147)
+ERROR:root:Error  : . LexToken(ID,'a',1,149)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,151)
+ERROR:root:Error  : . LexToken(ID,'b',1,154)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,155)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,161)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,163)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,164)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x282a072e370> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x282a072e520> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x282a072e6a0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2a245a0e370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2a245a0e4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'c'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e102a9e370> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e102a9e4f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'a'] and goto state 53
+INFO:root:Result : <str @ 0x1e1026ac080> ('resultado_operacao_aritmetica')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e102a9e6a0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7ffa444ce7d8> ('0')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','c','=','0',';'] and goto state 97
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON declaracoes] with ['int','resultado','=',<str @ 0x1e1026ac080>,';',None] and goto state 56
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON declaracoes] with ['int',None,';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7ffa443fe1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['d','=','b',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES comando . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(LPAREN,'(',1,78)
+ERROR:root:Error  : . LexToken(ID,'a',1,79)
+ERROR:root:Error  : . LexToken(GE,'>=',1,81)
+ERROR:root:Error  : . LexToken(INTEGER,'10',1,84)
+ERROR:root:Error  : . LexToken(RPAREN,')',1,86)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,87)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,98)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,108)
+ERROR:root:Error  : . LexToken(ID,'a',1,110)
+ERROR:root:Error  : . LexToken(MINUS,'-',1,112)
+ERROR:root:Error  : . LexToken(ID,'b',1,115)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,116)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,122)
+ERROR:root:Error  : . LexToken(ELSE,'else',1,123)
+ERROR:root:Error  : . LexToken(LBRACES,'{',1,127)
+ERROR:root:Error  : . LexToken(ID,'resultado',1,138)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,148)
+ERROR:root:Error  : . LexToken(ID,'a',1,150)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,152)
+ERROR:root:Error  : . LexToken(ID,'b',1,155)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,156)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,162)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,164)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,165)
+ERROR:root:Error  : . $end
