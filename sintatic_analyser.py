@@ -94,22 +94,7 @@ def t_error(t):
 
 # Constroi o analisador léxico
 lexer = lex.lex()
-
-
-def verificar_tipo_token(token): # remover essa funcao do codigo
-    '''Verifica qual o tipo do token e retorna o tipo correspondente'''
-    while True:
-        #tok = lexer.token()
-        if not tok:
-            break  # Fim dos tokens
-        print(tok)
-        if tok.value == token:
-            print(f"Token encontrado: {tok.type} - {tok.value}")
-            return tok.type
-    return None
-    # Percorre os tokens do lexer e verifica se o token existe
     
-
 # Define-se os procedimentos associados as regras de
 # produção da gramática (também é quando definimos a gramática)
 
