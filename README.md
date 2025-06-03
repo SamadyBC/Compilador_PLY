@@ -53,10 +53,9 @@ This analyzer provides a basic framework. Here are some potential areas for futu
 
 ## TO DO & Issues:
 
-- Fix the verification of redeclaration to the new declaration structures. (tipos ID EQUALS ID SEMICOLON and tipos ID EQUALS operacao_aritmetica SEMICOLON) -
-- In the case of: tipos ID EQUALS ID SEMICOLON. Make sure that the second ID was declared before being used. - verificar_variavel_usada(arg,arg)
 - Arithmetic operations are not returning the result of the operation to the table of data. It is important and must be fixed.
 - Implement `return 0` to make the code more similar to actual C code.
 - Standardize the aux function to have the same return pattern.
-- Fix the way a number is being interpreted. In my case the 2 is being read as a string.
 - Refactor the code and create a single function responsible for raising exceptions
+- Continue the reimplementation of the p_condicao e p_condicao_for
+- Implement aux function to verify the types

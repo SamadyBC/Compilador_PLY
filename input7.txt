@@ -3,6 +3,7 @@ int main()
     int a, b;
 	int c = 0;
 	int resultado = 2 + a;
+	a = c;
 	d = b;
     if(a >= 10){
          resultado = a -  b;

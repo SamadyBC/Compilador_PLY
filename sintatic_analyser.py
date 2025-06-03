@@ -1,5 +1,4 @@
 # ATIVIDADE PRÁTICA - reconhecedor de estruturas em C
-
 from ply import *
 import logging
 
@@ -274,13 +273,9 @@ def p_atribuicao(p):
                 | ID EQUALS ID SEMICOLON
                 | ID EQUALS operacao_aritmetica SEMICOLON'''
     
-    # Verifica se a variável foi declarada antes de atribuir
     try:
-        print("Teste")
         verificar_variavel_usada(p[1], p.lineno(1))
-        # Verifica se o termo a ser atribuído é uma variável
-        if len(p) >= 4 and isinstance(p[3], str): #Essa abordagem provavelmente nao eh funcional pois todos os termos sao strings
-            print("Teste2")
+        if len(p) >= 4:
             if p.slice[3].type == 'ID':
                 verificar_variavel_usada(p[3], p.lineno(3))
             if p.slice[3].type == 'values':
@@ -288,10 +283,6 @@ def p_atribuicao(p):
             if p.slice[3].type == 'operacao_aritmetica':
                 print("Verificando tipo de literal:", p.slice[3].value)
             # Atribui o valor à variável
-            valor = p[3]
-            simbolos[p[1]]['valor'] = valor
-
-        if len(p) >= 4:
             valor = p[3]
             simbolos[p[1]]['valor'] = valor
     except ErroSemantico as e:
@@ -317,30 +308,74 @@ def p_operacao_aritmetica(p):
                     | ID operadores_aritmeticos values
                     | values operadores_aritmeticos ID
                     | values operadores_aritmeticos values'''
-    if p.slice[1].type == 'ID':
-        verificar_variavel_usada(p[1], p.lineno(1))
-        # Idealmente, aqui você também pegaria o valor e tipo de simbolos[p[1]]
-        # para realizar a operação e a checagem de tipos.
-        # Ex: val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
-    # else: # Veio de 'values'
-        # val1, tipo1 = p[1], tipo_de_literal(p[1]) # função hipotética
-
-    # Verificar o segundo operando se for um ID
-    if p.slice[3].type == 'ID':
-        print("Verificando variável usada:", p[3])
-        verificar_variavel_usada(p[3], p.lineno(3))
-        # Idealmente: val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
-    # else: # Veio de 'values'
-        # val2, tipo2 = p[3], tipo_de_literal(p[3])
+    try:    
+        if p.slice[1].type == 'ID':
+            verificar_variavel_usada(p[1], p.lineno(1))
+            val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
+        else: # Veio de 'values'
+            val1 = p[1]
+            tipo1 = "tipo do literal 1" # tipo_de_literal(p[1])  função hipotética
     
-    # Aqui você faria a operação aritmética e a checagem de tipos.
-    # Por simplicidade, vamos focar apenas na verificação de uso.
-    # O resultado da operação (p[0]) deveria ser o valor calculado.
-    # Como o cálculo não é o foco aqui, vamos apenas retornar um placeholder ou None.
-    # Se você retornar None, p_declaracoes precisa estar ciente disso.
-    # Para o propósito de apenas verificar o uso, p[0] não precisa ser sofisticado ainda.
-    p[0] = "resultado_operacao_aritmetica" # Placeholder. Em um sistema real, seria o valor.
-#    print("Reconheci bloco operacoes aritmeticas")
+        # Verificar o segundo operando se for um ID
+        if p.slice[3].type == 'ID':
+            verificar_variavel_usada(p[3], p.lineno(3))
+            val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
+        else: # Veio de 'values'
+            val2 = p[3]
+            tipo2 = "tipo do literal 2" # tipo_de_literal(p[3])
+
+        try:
+            if tipo1 == 'int' and tipo2 == 'int':
+                match p[2]:
+                    case '+':
+                        resultado = int(val1) + int(val2)
+                    case '-':
+                        resultado = int(val1) - int(val2)
+                    case '*':
+                        resultado = int(val1) * int(val2)
+                    case '/':
+                        resultado = int(val1) / int(val2)
+                    case '^':
+                        resultado = int(val1) ** int(val2)
+            elif tipo1 == 'float' and tipo2 == 'float':
+                match p[2]:
+                    case '+':
+                        resultado = float(val1) + float(val2)
+                    case '-':
+                        resultado = float(val1) - float(val2)
+                    case '*':
+                        resultado = float(val1) * float(val2)
+                    case '/':
+                        resultado = float(val1) / float(val2)
+                    case '^':
+                        resultado = float(val1) ** float(val2)
+            elif tipo1 == 'tipo do literal 1' or tipo2 == 'tipo do literal 2':
+                # Aqui você poderia implementar a lógica para lidar com tipos de literais
+                # Por exemplo, converter strings para números, etc.
+                # Para simplificar, vamos apenas retornar None ou um placeholder.
+                resultado = 'resultado_operacao_aritmetica_nao_implementada'
+            else:
+                #Erro caso sejam tipos diferentes que nao podem ser convertidos.
+                resultado = 'resultado_tipos_diferentes'  # Ou algum valor padrão, se necessário
+
+            p[0] = resultado
+        except (ValueError, TypeError):
+            p[0] = None
+        
+        # Aqui você faria a operação aritmética e a checagem de tipos.
+        # Por simplicidade, vamos focar apenas na verificação de uso.
+        # O resultado da operação (p[0]) deveria ser o valor calculado.
+        # Como o cálculo não é o foco aqui, vamos apenas retornar um placeholder ou None.
+        # Se você retornar None, p_declaracoes precisa estar ciente disso.
+        # Para o propósito de apenas verificar o uso, p[0] não precisa ser sofisticado ainda.
+        # p[0] = "resultado_operacao_aritmetica" # Placeholder. Em um sistema real, seria o valor.
+    except ErroSemantico as e:
+        error_token = yacc.YaccSymbol()
+        error_token.type = 'ERROR'
+        error_token.value = 'error'
+        error_token.error_message = str(e)
+        p_error(error_token)
+        raise SyntaxError("Parsing interrompido devido a erro semântico")
 
 def p_condicao(p):
     '''condicao : values operadores_comparativos values
@@ -397,7 +432,7 @@ logging.basicConfig(
 )
 
 # entrada do arquivo
-file = open("input7.txt",'r')
+file = open("input8.txt",'r')
 data = file.read()
 
 # data = 'int main();'
