@@ -144,6 +144,7 @@ def p_declaracoes(p):
                 | tipos ID EQUALS ID SEMICOLON declaracoes
                 | tipos ID EQUALS operacao_aritmetica SEMICOLON declaracoes'''
     # Armazena o tipo para uso posterior
+    print("Entrou no bloco de declaracoes")
     tipo = p[1]
     
     # Caso de declaração com múltiplas variáveis (tipos declaracoes_linha SEMICOLON)
@@ -159,7 +160,7 @@ def p_declaracoes(p):
         print('Declaracao realizada em linha')
     
     # Caso de declaração simples (tipos ID SEMICOLON)
-    elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";": # Abordagem disfuncional uma vez que isinstance sempre retorna True, ja que todos os termos sao strings - realizar testes
+    elif len(p) >= 3 and p[3] == ";": # Abordagem disfuncional uma vez que isinstance sempre retorna True, ja que todos os termos sao strings - realizar testes
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
             simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
@@ -273,6 +274,7 @@ def p_atribuicao(p):
                 | ID EQUALS ID SEMICOLON
                 | ID EQUALS operacao_aritmetica SEMICOLON'''
     
+    print("Entrou no bloco de atribuicoes")
     try:
         verificar_variavel_usada(p[1], p.lineno(1))
         if len(p) >= 4:
@@ -308,6 +310,7 @@ def p_operacao_aritmetica(p):
                     | ID operadores_aritmeticos values
                     | values operadores_aritmeticos ID
                     | values operadores_aritmeticos values'''
+    print("Entrou no bloco de operacao_aritmetica")
     try:    
         if p.slice[1].type == 'ID':
             verificar_variavel_usada(p[1], p.lineno(1))
@@ -323,8 +326,9 @@ def p_operacao_aritmetica(p):
         else: # Veio de 'values'
             val2 = p[3]
             tipo2 = "tipo do literal 2" # tipo_de_literal(p[3])
-
+        print(f"Operação aritmética: {val1} {p[2]} {val2} (tipos: {tipo1}, {tipo2})")
         try:
+            resultado = "Teste"
             if tipo1 == 'int' and tipo2 == 'int':
                 match p[2]:
                     case '+':
@@ -399,6 +403,7 @@ def p_operadores_aritmeticos(p):
                             | TIMES
                             | DIVIDE
                             | POWER'''
+    p[0] = p[1]
 #    print("Reconheci operadores aritmeticos")
 
 def p_tipos(p):

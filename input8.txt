@@ -1,6 +1,5 @@
 int main(){
-	int var = 5 + 5;
-	int a, b, resultado;
-	int teste = a;
-	a  = var;
+	int x = 5;
+	int y = 6;
+	int z = x + y;
 };
