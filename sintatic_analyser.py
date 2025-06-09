@@ -17,7 +17,10 @@ def verificar_variavel_redeclarada(nome_var, linha=0):
 
 def verificar_variavel_usada(nome_var, linha=0):
     """Verifica se uma variável foi declarada antes de ser usada"""
-    if nome_var not in simbolos:
+    if(not simbolos):
+        print("Tabela de símbolos vazia")
+        return False
+    elif nome_var not in simbolos:
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada mas não declarada")
     return True
 
@@ -313,20 +316,28 @@ def p_operacao_aritmetica(p):
     print("Entrou no bloco de operacao_aritmetica")
     try:    
         if p.slice[1].type == 'ID':
-            verificar_variavel_usada(p[1], p.lineno(1))
-            val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
+            if(verificar_variavel_usada(p[1], p.lineno(1))):
+                print(f"Variável '{p[1]}' usada na operação aritmética")
+                val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
+            else:
+                print(f"Variável '{p[1]}' não declarada antes da operação aritmética depurando codigo")
+                val1, tipo1 = "debug_val1", "debug_tipo1"
         else: # Veio de 'values'
             val1 = p[1]
             tipo1 = "tipo do literal 1" # tipo_de_literal(p[1])  função hipotética
     
         # Verificar o segundo operando se for um ID
         if p.slice[3].type == 'ID':
-            verificar_variavel_usada(p[3], p.lineno(3))
-            val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
+            if(verificar_variavel_usada(p[3], p.lineno(3))):
+                print(f"Variável '{p[3]}' usada na operação aritmética")
+                val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
+            else:
+                print(f"Variável '{p[3]}' não declarada antes da operação aritmética depurando codigo")
+                val2, tipo2 = "debug_val2", "debug_tipo2"
         else: # Veio de 'values'
             val2 = p[3]
             tipo2 = "tipo do literal 2" # tipo_de_literal(p[3])
-        print(f"Operação aritmética: {val1} {p[2]} {val2} (tipos: {tipo1}, {tipo2})")
+        #print(f"Operação aritmética: {val1} {p[2]} {val2} (tipos: {tipo1}, {tipo2})")
         try:
             resultado = "Teste"
             if tipo1 == 'int' and tipo2 == 'int':
