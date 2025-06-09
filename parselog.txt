@@ -10173,3 +10173,2032 @@ INFO:root:Result : <NoneType @ 0x7fff29fce1d0> (None)
 INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
 INFO:root:Result : <NoneType @ 0x7fff29fce1d0> (None)
 INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17bbecf6010> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17bbecf62b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17bbecf63a0> ('int')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID SEMICOLON] with ['int','z',';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','y','=','6',';',None] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','x','=','5',';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff1feee6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff1fedfaf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando corpo] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17d6cd20c90> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17d6cd20150> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x17d6cd20240> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+INFO:root:Result : <str @ 0x17d6c908800> ('resultado_tipos_diferentes')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','z','=',<str @ 0x17d6c908800>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','y','=','6',';',None] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','x','=','5',';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2b2d73b1bc0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 55
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2b2d73b1d10> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e7d8> ('0')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2b2d73b1ce0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e838> ('2')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 65
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['2',None,'a'] and goto state 53
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','resultado','=',None,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','c','=','0',';',None] and goto state 56
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos declaracoes_linha . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ff8fbd1bc0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ff8fbd1c20> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1ff8fbd1dd0> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x',None,'y'] and goto state 53
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','z','=',None,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','y','=','6',';',None] and goto state 96
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a4c3de0c90> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a4c3de0150> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a4c3de0240> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+INFO:root:Result : <str @ 0x1a4c39c8800> ('resultado_tipos_diferentes')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','z','=',<str @ 0x1a4c39c8800>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','y','=','6',';',None] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','x','=','5',';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23c583b38a0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23c583b05d0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23c5837b240> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff1feee6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+INFO:root:Result : <str @ 0x23c57f98800> ('resultado_tipos_diferentes')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','z','=',<str @ 0x23c57f98800>,';'] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','y','=','6',';',None] and goto state 96
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON declaracoes] with ['int','x','=','5',';',None] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff1fe1e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1694b335380> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1694b335410> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1694b3355c0> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff1feee6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x213a2af5410> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x213a2af5560> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff1feee8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x213a2af5650> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff1feee6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,50)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,52)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,53)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e3dbabdfb0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e3dbb453b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 52
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e3dbb45c80> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 58
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 53
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values SEMICOLON . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS values . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,50)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,52)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,53)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d42a627f30> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x1d42aa713c0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d42a53dfb0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x1d42aa71280> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d42a5c50b0> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','z','=',11,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x1d42a620180> ([None, None, None])
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',<list @ 0x1d42a620180>,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1bfe1775260> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x1bfe17d1300> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1bfe1775380> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x1bfe17e0400> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1bfe1775350> ('int')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID SEMICOLON] with ['int','z',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x1bfe17d1300> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x1bfe17d1300>,None] and goto state 9
+INFO:root:Result : <list @ 0x1bfe131b880> ([None, None, None, None])
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',<list @ 0x1bfe131b880>,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x21266de53b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x21266df1cc0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x21266de5530> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x21266df0b40> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x21266de5500> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x2126698b880> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x2126698b880>,None] and goto state 9
+INFO:root:Result : <list @ 0x21266df1cc0> ([None, None, None, None])
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',<list @ 0x21266df1cc0>,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x25ec4bf53b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x25ec4c01cc0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x25ec4bf5530> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x25ec4c00b40> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x25ec4bf5500> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x25ec479b880> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x25ec479b880>,None] and goto state 9
+INFO:root:Result : <list @ 0x25ec4c01cc0> ([None, None, None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x25ec4bf5410> ('int')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID SEMICOLON] with ['int','c',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x25ec4c01cc0>,None] and goto state 9
+INFO:root:Result : <list @ 0x25ec479b880> ([None, None, None, None, None])
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',<list @ 0x25ec479b880>,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b09b4853b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x1b09b491cc0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b09b485530> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x1b09b490b40> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b09b485500> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x1b09b02b880> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x1b09b02b880>,None] and goto state 9
+INFO:root:Result : <list @ 0x1b09b491cc0> ([None, None, None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1b09b485410> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 52
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a8997653b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x1a899771cc0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a899765530> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x1a899770b40> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a899765500> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x1a89930b880> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x1a89930b880>,None] and goto state 9
+INFO:root:Result : <list @ 0x1a899771cc0> ([None, None, None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1a899765410> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',11,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x1a899771cc0>,None] and goto state 9
+INFO:root:Result : <list @ 0x1a899770b40> ([None, None, None, None, None])
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',<list @ 0x1a899770b40>,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20a32f453b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <list @ 0x20a32f51cc0> ([None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20a32f45530> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None],None] and goto state 9
+INFO:root:Result : <list @ 0x20a32f50b40> ([None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20a32f45500> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [[None, None],None] and goto state 9
+INFO:root:Result : <list @ 0x20a32aeb880> ([None, None, None])
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [<list @ 0x20a32aeb880>,None] and goto state 9
+INFO:root:Result : <list @ 0x20a32f51cc0> ([None, None, None, None])
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20a32f45410> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 52
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2036ca95290> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2036ca95470> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2036ca95410> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2036ca953e0> ('int')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 52
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x208062b5290> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x208062b5470> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x208062b5410> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x208062b53e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['7','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff23a0fb38> (13)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',13,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2f708a25290> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2f708a25470> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2f708a25410> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2f708a253e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['7','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff23a0fb38> (13)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','x','=',13,';'] and goto state 11
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo tipos ID EQUALS operacao_aritmetica . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo tipos ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo tipos ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo tipos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,79)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d2f04e5290> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d2f04e5470> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1d2f04e5410> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','d'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(ID,'y',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,76)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,78)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,79)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1cd90409fb0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1cd9040a280> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1cd8f60aa90> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff23a0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1cd903ca160> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff23a1e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff23a1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['7','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff23a0fb38> (13)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',13,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff2394e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c7de585fb0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c7de586250> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c7de5861c0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff6afcfaf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2c7de587c90> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['7','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff6afcfb38> (13)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',13,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1caec4760a0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6aa1e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1caec476310> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6aa1e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1caec476340> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6aa1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff6aa0faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1caec4765e0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6aa1e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff6aa1e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos ID] with ['7','+','y'] and goto state 52
+INFO:root:Result : <int @ 0x7fff6aa0fb38> (13)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',13,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6a94e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e08c706010> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e08c7062b0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e08c7062e0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['x','+','y'] and goto state 39
+INFO:root:Result : <int @ 0x7fff6bd4faf8> (11)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',11,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1e08c706580> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [values -> FLOATN] with ['7.5'] and goto state 82
+INFO:root:Result : <str @ 0x1e08c706640> ('7.5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['7','+','7.5'] and goto state 52
+INFO:root:Result : <str @ 0x1e08bc88e70> ('resultado_operacao_aritmetica_nao_imple ...)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',<str @ 0x1e08bc88e70>,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x198d2e55f80> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x198d2e56220> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x198d2e56250> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['z','=',None,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x198d2e564f0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [values -> FLOATN] with ['7.5'] and goto state 82
+INFO:root:Result : <str @ 0x198d2e565b0> ('7.5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['7','+','7.5'] and goto state 52
+INFO:root:Result : <str @ 0x198d23c8e70> ('resultado_operacao_aritmetica_nao_imple ...)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',<str @ 0x198d23c8e70>,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2fb18076190> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2fb18076400> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2fb18076430> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1fe1ffb0cf0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1fe1ffb0e70> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1fe1ffb0de0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f7b9d40cf0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','num','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f7b9d40ed0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e7d8> ('0')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','count_double','=','0',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_comparativos -> LE] with ['<='] and goto state 72
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['1'] and goto state 88
+INFO:root:Result : <str @ 0x7fff6bd5e808> ('1')
+INFO:root:Action : Reduce rule [condicao -> ID operadores_comparativos values] with ['num',None,'1'] and goto state 43
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 81
+INFO:root:Result : <str @ 0x7fff6bd5e838> ('2')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos values] with ['count_double','+','2'] and goto state 39
+INFO:root:Result : <int @ 0x7fff6bd4f9d8> (2)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS operacao_aritmetica SEMICOLON] with ['count_double','=',2,';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 93
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_while -> WHILE LPAREN condicao RPAREN LBRACES corpo RBRACES] with ['while','(',None,')','{',None,'}'] and goto state 12
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> bloco_while] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x217dddd0cf0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','age','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x217dddd0ed0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['0'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e7d8> ('0')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','level','=','0',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_comparativos -> LT] with ['<'] and goto state 72
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['18'] and goto state 88
+INFO:root:Result : <str @ 0x217dddd1080> ('18')
+INFO:root:Action : Reduce rule [condicao -> ID operadores_comparativos values] with ['age',None,'18'] and goto state 46
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['1'] and goto state 38
+INFO:root:Result : <str @ 0x7fff6bd5e808> ('1')
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS values SEMICOLON] with ['level','=','1',';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 94
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_comparativos -> LE] with ['<='] and goto state 72
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['60'] and goto state 88
+INFO:root:Result : <str @ 0x217dddd1200> ('60')
+INFO:root:Action : Reduce rule [condicao -> ID operadores_comparativos values] with ['age',None,'60'] and goto state 46
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['2'] and goto state 38
+INFO:root:Result : <str @ 0x7fff6bd5e838> ('2')
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS values SEMICOLON] with ['level','=','2',';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 94
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['3'] and goto state 38
+INFO:root:Result : <str @ 0x7fff6bd5e868> ('3')
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS values SEMICOLON] with ['level','=','3',';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 111
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_if -> IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE LBRACES corpo RBRACES] with ['if','(',None,')','{',None,'}','else','{',None,'}'] and goto state 13
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> bloco_if] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 111
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_if -> IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE LBRACES corpo RBRACES] with ['if','(',None,')','{',None,'}','else','{',None,'}'] and goto state 13
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> bloco_if] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20076f00cf0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20076f00e70> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x20076f00de0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2227d8c0d80> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2227d8c0ed0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2227d8c0e70> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f5fb685050> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f5fb685230> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6bd5e8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x1f5fb6851d0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6bc8e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6bd5e6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26c6bd70ed0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26c6bd70f60> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26c6bd70fc0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos ID] with ['a','+','b'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,60)
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x13dd7d30ed0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x13dd7d30f60> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x13dd7d30fc0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['z','=','a',';'] and goto state 21
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [expressao -> atribuicao] with [None] and goto state 15
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> expressao] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x13dd7d31170> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['7'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde928> ('7')
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 63
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [values -> FLOATN] with ['7.5'] and goto state 82
+INFO:root:Result : <str @ 0x13dd7d310b0> ('7.5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> values operadores_aritmeticos values] with ['7','+','7.5'] and goto state 52
+INFO:root:Result : <str @ 0x13dd757ec10> ('resultado_operacao_aritmetica_nao_imple ...)
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS operacao_aritmetica SEMICOLON] with ['int','c','=',<str @ 0x13dd757ec10>,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [bloco_principal -> LBRACES corpo RBRACES] with ['{',None,'}'] and goto state 6
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [inicial -> INT MAIN LPAREN RPAREN bloco_principal SEMICOLON] with ['int','main','(',')',None,';'] and goto state 1
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Done   : Returning <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:PLY: PARSE DEBUG END
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x29f53938ea0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x29f53939080> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x29f53939020> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [atribuicao -> ID EQUALS ID SEMICOLON] with ['z','=','a',';'] and goto state 21
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(ID,'c',1,63)
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,65)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,67)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,69)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,71)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,74)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,76)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,77)
+ERROR:root:Error  : . $end
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26e526d8ea0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26e526d9080> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x26e526d9020> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 81
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos values] with ['a','+','5'] and goto state 39
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23dc46e6250> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23dc46e64c0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x23dc46e64f0> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 81
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos values] with ['a','+','5'] and goto state 39
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2241c77a190> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2241c77a460> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x2241c77a490> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 81
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos values] with ['a','+','5'] and goto state 39
+INFO:root:PLY: PARSE DEBUG START
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x265a2ea61c0> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','x','=','5',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 10
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> comando] with [None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x265a2ea6430> ('int')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['6'] and goto state 51
+INFO:root:Result : <str @ 0x7fff6afde8f8> ('6')
+INFO:root:Action : Reduce rule [declaracoes -> tipos ID EQUALS values SEMICOLON] with ['int','y','=','6',';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [tipos -> INT] with ['int'] and goto state 16
+INFO:root:Result : <str @ 0x265a2ea6460> ('int')
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID] with ['b'] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['a',',',None] and goto state 54
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes_linha -> ID COMMA declaracoes_linha] with ['z',',',None] and goto state 28
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [declaracoes -> tipos declaracoes_linha SEMICOLON] with ['int',None,';'] and goto state 11
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [comando -> declaracoes] with [None] and goto state 26
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [corpo -> corpo comando] with [None,None] and goto state 9
+INFO:root:Result : <NoneType @ 0x7fff6af0e1d0> (None)
+INFO:root:Action : Reduce rule [operadores_aritmeticos -> PLUS] with ['+'] and goto state 56
+INFO:root:Result : <str @ 0x7fff6afde6e8> ('+')
+INFO:root:Action : Reduce rule [values -> INTEGER] with ['5'] and goto state 81
+INFO:root:Result : <str @ 0x7fff6afde8c8> ('5')
+INFO:root:Action : Reduce rule [operacao_aritmetica -> ID operadores_aritmeticos values] with ['a','+','5'] and goto state 39
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID operadores_aritmeticos . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID EQUALS . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo ID . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES corpo . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN LBRACES . error
+ERROR:root:Error  : INT MAIN LPAREN RPAREN . error
+ERROR:root:Error  : INT MAIN LPAREN . error
+ERROR:root:Error  : INT MAIN . error
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : INT . LexToken(ID,'c',1,67)
+ERROR:root:Error  : INT . error
+ERROR:root:Error  : . error
+ERROR:root:Error  : . LexToken(EQUALS,'=',1,69)
+ERROR:root:Error  : . LexToken(INTEGER,'7',1,71)
+ERROR:root:Error  : . LexToken(PLUS,'+',1,73)
+ERROR:root:Error  : . LexToken(FLOATN,'7.5',1,75)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,78)
+ERROR:root:Error  : . LexToken(RBRACES,'}',1,80)
+ERROR:root:Error  : . LexToken(SEMICOLON,';',1,81)
+ERROR:root:Error  : . $end

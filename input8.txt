@@ -1,6 +1,7 @@
 int main(){
 	int x = 5;
 	int y = 6;
-	int z;
-	z = x + y;
+	int z, a, b;
+	z = a + 5;
+	int c = 7 + 7.5;
 };
