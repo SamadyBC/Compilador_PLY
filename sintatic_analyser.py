@@ -1,4 +1,3 @@
-# ATIVIDADE PRÁTICA - reconhecedor de estruturas em C
 from ply import *
 import logging
 
@@ -7,6 +6,28 @@ class ErroSemantico(Exception):
     def __init__(self, mensagem):
         self.mensagem = mensagem
         super().__init__(self.mensagem)
+
+def handle_semantic_error(e):
+    """
+    Função para tratar erros semânticos durante o parsing.
+    
+    Args:
+        e: Exceção do tipo ErroSemantico capturada
+    
+    Raises:
+        SyntaxError: Sempre levanta esta exceção para interromper o parsing
+    """
+    # Cria um token de erro com a mensagem
+    error_token = yacc.YaccSymbol()
+    error_token.type = 'ERROR'
+    error_token.value = 'error'
+    error_token.error_message = str(e)
+    
+    # Substitui o token atual pelo token de erro
+    p_error(error_token)
+    
+    # Interrompe o parsing
+    raise SyntaxError("Parsing interrompido devido a erro semântico")
 
 def verificar_variavel_redeclarada(nome_var, linha=0):
     """
@@ -34,7 +55,6 @@ def verificar_variavel_inicializada(nome_var, linha=0):
     Retorna: O valor da variável se a verificação passar
              Lança ErroSemantico se a variável não estiver inicializada
     """
-    #verificar_variavel_usada(nome_var, linha)  # Primeiro verifica se a variável existe
     
     if simbolos[nome_var]['valor'] is None:
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada antes de ser inicializada")
@@ -167,6 +187,7 @@ def p_declaracoes(p):
     tipo = p[1]
     
     # Caso de declaração com múltiplas variáveis (tipos declaracoes_linha SEMICOLON)
+    # Adicionar um try except?
     if len(p) >= 3 and p[2] is None:
         print(simbolos.keys())
         print(simbolos.items())
@@ -185,18 +206,9 @@ def p_declaracoes(p):
             simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada variável '{p[2]}' do tipo '{tipo}'")
         except ErroSemantico as e:
-            # Cria um token de erro com a mensagem
-            error_token = yacc.YaccSymbol()
-            error_token.type = 'ERROR'
-            error_token.value = 'error'
-            error_token.error_message = str(e)
-            
-            # Substitui o token atual pelo token de erro
-            p_error(error_token)
-            
-            # Interrompe o parsing
-            raise SyntaxError("Parsing interrompido devido a erro semântico")
+            handle_semantic_error(e)
     
+    # Caso de declaracao com  inicializacao e operacao aritmetica (tipos ID EQUALS operacao_aritmetica SEMICOLON)
     elif len(p) >= 5 and p[3] == '=' and p.slice[4].type == 'operacao_aritmetica':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
@@ -204,46 +216,31 @@ def p_declaracoes(p):
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
         except ErroSemantico as e:
-            error_token = yacc.YaccSymbol()
-            error_token.type = 'ERROR'
-            error_token.value = 'error'
-            error_token.error_message = str(e)
-            p_error(error_token)
-            raise SyntaxError("Parsing interrompido devido a erro semântico")
-    # Caso de declaração com inicialização
-
+            handle_semantic_error(e)
+    
+    # Caso de declaração com inicialização (tipos ID EQUALS values SEMICOLON ou tipos ID EQUALS ID SEMICOLON)
     elif len(p) >= 5 and p[3] == '=':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
-            #verificar_tipo_token(p[4], lexer)
-            print(f"p[4]: '{p.slice[4].value}' - '{p[4]}'")
+            print(f"p[4]: '{p.slice[4].value}' - '{p.slice[4].type}'")
             if p.slice[4].type == 'ID':
+                # Implementar funcao para checar compatibilidade entre 'tipo_declarado' e o tipo do literal
                 verificar_variavel_usada(p[4], p.lineno(4))
 
             if p.slice[4].type == 'values':
-                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o tipo do literal
+                # Implementar funcao para checar compatibilidade entre 'tipo_declarado' e o tipo do literal
                 print("Verificando tipo de literal:", p.slice[4].value)
-            if p.slice[4].type == 'operacao_aritmetica':
-                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
-                print("Verificando tipo de literal:", p.slice[4].value)
+            # if p.slice[4].type == 'operacao_aritmetica':
+                # # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
+                # print("Verificando tipo de literal:", p.slice[4].value)
 
             valor = p[4]
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
         except ErroSemantico as e:
-            # Cria um token de erro com a mensagem
-            error_token = yacc.YaccSymbol()
-            error_token.type = 'ERROR'
-            error_token.value = 'error'
-            error_token.error_message = str(e)
+           handle_semantic_error(e)
             
-            # Substitui o token atual pelo token de erro
-            p_error(error_token)
-            
-            # Interrompe o parsing
-            raise SyntaxError("Parsing interrompido devido a erro semântico")
-            
-    print(f"Reconheci Declarações {tipo} {p[2] if isinstance(p[2], str) else ''} {p[3]}")
+    print(f"Reconheci Declarações {tipo} {p[2]} {p[3]}")
 
 def p_declaracao_linha(p):
     '''declaracoes_linha : ID COMMA declaracoes_linha

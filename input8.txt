@@ -1,5 +1,6 @@
 int main(){
 	int x = 5;
+	int x = 5;
 	int y = 6;
 	int z, a, b;
 	z = a + 5;
