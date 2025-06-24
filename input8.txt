@@ -1,8 +1,7 @@
 int main(){
 	int x = 5;
-	int x = 5;
-	int y = 6;
-	int z, a, b;
-	z = a + 5;
-	int c = 7 + 7.5;
+	float f = 8.5;
+	char c = "A";
+	x = 6;
+
 };
