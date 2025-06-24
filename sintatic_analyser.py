@@ -13,29 +13,6 @@ class ErroSintatico(Exception):
         self.mensagem = mensagem
         super().__init__(self.mensagem)
 
-
-def handle_sintatic_error(e):
-    """
-    Função para tratar erros semânticos durante o parsing.
-    
-    Args:
-        e: Exceção do tipo ErroSemantico capturada
-    
-    Raises:
-        SyntaxError: Sempre levanta esta exceção para interromper o parsing
-    """
-    # Cria um token de erro com a mensagem
-    error_token = yacc.YaccSymbol()
-    #error_token.type = 'ERROR'
-    #error_token.value = 'error'
-    #error_token.error_message = str(e)
-    
-    # Substitui o token atual pelo token de erro
-    p_error(error_token)
-    
-    # Interrompe o parsing
-    raise SyntaxError("Parsing interrompido devido a erro semântico")
-
 def handle_semantic_error(e):
     """
     Função para tratar erros semânticos durante o parsing.
@@ -117,8 +94,15 @@ def verificar_compatibilidade_tipos(tipo_destino, valor, linha=0, modo="atribuic
     else:
         valor_original = valor
         # Determinar o tipo do literal
-        if isinstance(valor, str):
+        if isinstance(valor, str): #Verificar essa implementacao
             if valor.isdigit():
+                tipo_valor = "int"
+            elif '.' in valor and any(c.isdigit() for c in valor):
+                tipo_valor = "float"
+            else:
+                tipo_valor = "char"
+        else:
+            if valor.isdigit(): # Verificar essa implementacao
                 tipo_valor = "int"
             elif '.' in valor and any(c.isdigit() for c in valor):
                 tipo_valor = "float"
@@ -297,7 +281,7 @@ def p_declaracoes(p):
     elif len(p) >= 5 and p[3] == '=' and p.slice[4].type == 'operacao_aritmetica':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
-            valor = p[4]
+            valor = verificar_compatibilidade_tipos(p[1], p[4], p.lineno(4), "declaracao")
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
         except ErroSemantico as e:
@@ -321,7 +305,7 @@ def p_declaracoes(p):
             if p.slice[4].type == 'operacao_aritmetica':
                 # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
                 print("Verificando tipo do reseultado da operacao aritmetica:", p.slice[4].value)
-
+                valor = p[4]
             
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
@@ -337,13 +321,12 @@ def p_declaracao_linha(p):
     try:
         verificar_variavel_redeclarada(p[1], p.lineno(1))
         simbolos[p[1]] = {'valor': None, 'tipo': None, 'contexto': get_contexto(), 'em_linha': True}
-        #print(f"Declarada variável '{p[1]}'")
     except ErroSemantico as e:
         handle_semantic_error(e)
 
     p[0] = None
     
-    print(f"Reconheci Declarações linha {p[1]}")
+    print(f"Reconheci Declarações linha - variavel: {p[1]}")
 
 def p_bloco_while(p):
     '''bloco_while : WHILE LPAREN condicao RPAREN LBRACES corpo RBRACES'''
@@ -420,7 +403,7 @@ def p_operacao_aritmetica(p):
             print(isinstance(p[1], int), p[1].isdigit())
             if p[1].isdigit(): #Abordagem desfuncional;
                 tipo1 = "int"
-            elif '.' in p[1]:
+            elif '.' in p[1] and any(c.isdigit() for c in p[1]):
                 tipo1 = "float"
             else:
                 tipo1 = "char"  # ou outro tipo adequado
@@ -437,54 +420,82 @@ def p_operacao_aritmetica(p):
             print(isinstance(p[3], int), p[3].isdigit())
             if p[3].isdigit():
                 tipo2 = "int"
-            elif '.' in p[3]:
+            elif '.' in p[3] and any(c.isdigit() for c in p[3]):
                 tipo2 = "float"
             else:
                 tipo2 = "char"
             print('Tipo de Literal: ', tipo2)
-        
-        try:
-            resultado = None
 
-            if tipo1 == 'int' and tipo2 == 'int':
-                match p[2]:
-                    case '+':
-                        resultado = int(val1) + int(val2)
-                    case '-':
-                        resultado = int(val1) - int(val2)
-                    case '*':
-                        resultado = int(val1) * int(val2)
-                    case '/':
-                        resultado = int(val1) / int(val2)
-                    case '^':
-                        resultado = int(val1) ** int(val2)
-            elif tipo1 == 'float' and tipo2 == 'float':
-                match p[2]:
-                    case '+':
-                        resultado = float(val1) + float(val2)
-                    case '-':
-                        resultado = float(val1) - float(val2)
-                    case '*':
-                        resultado = float(val1) * float(val2)
-                    case '/':
-                        resultado = float(val1) / float(val2)
-                    case '^':
-                        resultado = float(val1) ** float(val2)
-            else:
-                #Erro caso sejam tipos diferentes que nao podem ser convertidos.
-                resultado = 'resultado_operacao_aritmetica_nao_implementada'  # Ou algum valor padrão, se necessário
+        if tipo1 == "float" or tipo2 == "float":
+            tipo_resultado = "float"
+        else:
+            tipo_resultado = "int"
 
-            p[0] = resultado
-        except (ValueError, TypeError):
-            p[0] = None
+        # Converter os valores para o tipo apropriado
+        val1_convertido = verificar_compatibilidade_tipos(tipo_resultado, val1, p.lineno(1), "operacao")
+        val2_convertido = verificar_compatibilidade_tipos(tipo_resultado, val2, p.lineno(3), "operacao")
         
-        # Aqui você faria a operação aritmética e a checagem de tipos.
-        # Por simplicidade, vamos focar apenas na verificação de uso.
-        # O resultado da operação (p[0]) deveria ser o valor calculado.
-        # Como o cálculo não é o foco aqui, vamos apenas retornar um placeholder ou None.
-        # Se você retornar None, p_declaracoes precisa estar ciente disso.
-        # Para o propósito de apenas verificar o uso, p[0] não precisa ser sofisticado ainda.
-        # p[0] = "resultado_operacao_aritmetica" # Placeholder. Em um sistema real, seria o valor.
+        if tipo_resultado == "int":
+            match p[2]:
+                case '+':
+                    resultado = val1_convertido + val2_convertido
+                case '-':
+                    resultado = val1_convertido - val2_convertido
+                case '*':
+                    resultado = val1_convertido * val2_convertido
+                case '/':
+                    if val2_convertido == 0:
+                        raise ErroSemantico(f"Erro semântico na linha {p.lineno(3)}: divisão por zero")
+                    resultado = val1_convertido // val2_convertido
+        elif tipo_resultado == "float":
+            match p[2]:
+                case '+':
+                    resultado = val1_convertido + val2_convertido
+                case '-':
+                    resultado = val1_convertido - val2_convertido
+                case '*':
+                    resultado = val1_convertido * val2_convertido
+                case '/':
+                    if val2_convertido == 0.0:
+                        raise ErroSemantico(f"Erro semântico na linha {p.lineno(3)}: divisão por zero")
+                    resultado = val1_convertido / val2_convertido
+        
+        p[0] = resultado
+
+        #try:
+        #    resultado = None
+#
+        #    if tipo1 == 'int' and tipo2 == 'int':
+        #        match p[2]:
+        #            case '+':
+        #                resultado = int(val1) + int(val2)
+        #            case '-':
+        #                resultado = int(val1) - int(val2)
+        #            case '*':
+        #                resultado = int(val1) * int(val2)
+        #            case '/':
+        #                resultado = int(val1) / int(val2)
+        #            case '^':
+        #                resultado = int(val1) ** int(val2)
+        #    elif tipo1 == 'float' and tipo2 == 'float':
+        #        match p[2]:
+        #            case '+':
+        #                resultado = float(val1) + float(val2)
+        #            case '-':
+        #                resultado = float(val1) - float(val2)
+        #            case '*':
+        #                resultado = float(val1) * float(val2)
+        #            case '/':
+        #                resultado = float(val1) / float(val2)
+        #            case '^':
+        #                resultado = float(val1) ** float(val2)
+        #    else:
+        #        #Erro caso sejam tipos diferentes que nao podem ser convertidos.
+        #        resultado = 'resultado_operacao_aritmetica_nao_implementada'  # Ou algum valor padrão, se necessário
+#
+        #    p[0] = resultado
+        #except (ValueError, TypeError):
+        #    p[0] = None
     except ErroSemantico as e:
         handle_semantic_error(e)
 

@@ -1,7 +1,3 @@
 int main(){
-	int x;
-	float f = 8.5;
-	int y = f;
-	x = f;
-	f = 9.7;
+	char x = 5 + 6;
 };
