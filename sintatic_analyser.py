@@ -89,30 +89,6 @@ def verificar_variavel_inicializada(nome_var, linha=0):
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada antes de ser inicializada")
     return
 
-# TO DO: verificar melhor a forma como que esta sendo feita o levantamento de exceções
-
-def verificar_tipo_operandos(operando1, operando2, linha=0): 
-    try:
-        
-        tipo1 = simbolos[operando1]['tipo']
-        valor = operando2
-
-        print(f"Tipo variavel {operando1}: {tipo1} ")
-        print(f"Valor Atribuicao: {valor} ")
-        
-
-        if tipo1 == "int":
-            operador1 = int(valor)
-        elif tipo1 == "float":
-            operador1 = float(valor)
-        elif tipo1 == "char":
-            operador1 = str(valor)
-
-        #return operador1
-
-    except ErroSintatico as e:
-        handle_semantic_error(e)
-
 def verificar_compatibilidade_tipos(tipo_destino, valor, linha=0, modo="atribuicao"):
     """
     Verifica a compatibilidade entre um tipo de destino e um valor,
@@ -340,18 +316,11 @@ def p_declaracoes(p):
             if p.slice[4].type == 'values':
                 # Implementar funcao para checar compatibilidade entre 'tipo_declarado' e o tipo do literal
                 print("Verificando tipo de literal:", p.slice[4].value)
-                print("p.slice[4].value str | digit:", isinstance(p.slice[4].value, str), p.slice[4].value.isdigit())
-                print("p[4] str | digit:", isinstance(p[4], str), p[4].isdigit())
-                valor = p[4]
-                if p[1] == "int":
-                    valor = int(valor)
-                elif p[1] == "float":
-                    valor = float(valor)   
-                elif p[1] == "char":
-                    valor = str(valor)
-            # if p.slice[4].type == 'operacao_aritmetica':
-                # # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
-                # print("Verificando tipo de literal:", p.slice[4].value)
+                valor = verificar_compatibilidade_tipos(p[1], p[4], p.lineno(4), "declaracao")
+                
+            if p.slice[4].type == 'operacao_aritmetica':
+                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
+                print("Verificando tipo do reseultado da operacao aritmetica:", p.slice[4].value)
 
             
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
@@ -371,13 +340,6 @@ def p_declaracao_linha(p):
         #print(f"Declarada variável '{p[1]}'")
     except ErroSemantico as e:
         handle_semantic_error(e)
-
-    
-    # Propaga os IDs para o nó pai
-    #if len(p) > 2:
-    #    p[0] = None  # Sinaliza que é uma declaração em linha
-    #else:
-    #    p[0] = None  # Sinaliza que é uma declaração em linha
 
     p[0] = None
     
@@ -415,36 +377,24 @@ def p_atribuicao(p):
     
     print("Entrou no bloco de atribuicoes")
     try:
-
+        tipo = simbolos[p[1]]['tipo']
         verificar_variavel_usada(p[1], p.lineno(1))
         if len(p) >= 4:
             if p.slice[3].type == 'ID':
                 verificar_variavel_usada(p[3], p.lineno(3))
                 verificar_variavel_inicializada(p[3], p.lineno(3))
-                valor = p[3]
+                print("Verificando tipo da variavel:", p.slice[1].value)
+                valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
             if p.slice[3].type == 'values':
                 print("Verificando tipo de literal:", p.slice[3].value)
-                #Implementar a função tipo_de_literal(p[3]) para determinar o tipo do literal
-                #verificar_tipo_operandos(p.slice[1].value, p.slice[3].value, p.lineno(1))
-                tipo = simbolos[p[1]]['tipo']
                 valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
                 
-                #tipo = simbolos[p[1]]['tipo']
-                #valor = p[3]
-#
-                #if tipo == "int":
-                #    valor = int(float(valor))  
-                #elif tipo == "float":
-                #    valor = float(p[3])
-                #elif tipo == "char":
-                #    valor = str(p[3])
-                
             if p.slice[3].type == 'operacao_aritmetica':
-                print("Verificando tipo de literal:", p.slice[3].value)
-                #Implementar a função tipo_de_literal(p[3]) para determinar o tipo do literal
-                #valor = p[3]
+                print("Verificando tipo do resultado da operacao aritmetica:", p.slice[3].value)
+                valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
 
             simbolos[p[1]]['valor'] = valor
+
     except ErroSemantico as e:
         handle_semantic_error(e)
     print("Reconheci bloco atribuicao", p[1], p[2])

@@ -2,5 +2,6 @@ int main(){
 	int x;
 	float f = 8.5;
 	int y = f;
-	x = "A";
+	x = f;
+	f = 9.7;
 };
