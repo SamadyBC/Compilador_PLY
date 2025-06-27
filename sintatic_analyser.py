@@ -1,6 +1,4 @@
-# ATIVIDADE PRÁTICA - reconhecedor de estruturas em C
-
-from ply import *
+from ply import * # type: ignore
 import logging
 
 class ErroSemantico(Exception):
@@ -9,20 +7,135 @@ class ErroSemantico(Exception):
         self.mensagem = mensagem
         super().__init__(self.mensagem)
 
+class ErroSintatico(Exception):
+    """Exceção para erros sintáticos durante a análise"""
+    def __init__(self, mensagem):
+        self.mensagem = mensagem
+        super().__init__(self.mensagem)
+
+def handle_semantic_error(e):
+    """
+    Função para tratar erros semânticos durante o parsing.
+    
+    Args:
+        e: Exceção do tipo ErroSemantico capturada
+    
+    Raises:
+        SyntaxError: Sempre levanta esta exceção para interromper o parsing
+    """
+    # Cria um token de erro com a mensagem
+    error_token = yacc.YaccSymbol()
+    error_token.type = 'ERROR'
+    error_token.value = 'error'
+    error_token.error_message = str(e)
+    #
+    ## Substitui o token atual pelo token de erro
+    p_error(error_token)
+    
+    # Interrompe o parsing
+    raise SyntaxError("Parsing interrompido devido a erro semântico")
+
 def verificar_variavel_redeclarada(nome_var, linha=0):
-    """Verifica se uma variável já foi declarada e lança exceção se for o caso"""
+    """
+    Verifica se uma variável já foi declarada
+    Retorna: True se a verificação passar (variável não declarada)
+             Lança ErroSemantico se a variável já estiver declarada
+    """
     if nome_var in simbolos:
-        #return True
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' já declarada")
-    return False
+    return True
 
 def verificar_variavel_usada(nome_var, linha=0):
-    """Verifica se uma variável foi declarada antes de ser usada"""
+    """
+    Verifica se uma variável foi declarada antes de ser usada
+    Retorna: True se a verificação passar (variável está declarada)
+             Lança ErroSemantico se a variável não estiver declarada
+    """
     if nome_var not in simbolos:
         raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada mas não declarada")
     return True
 
+def verificar_variavel_inicializada(nome_var, linha=0):
+    """
+    Verifica se uma variável foi inicializada antes de ser usada
+    Retorna: O valor da variável se a verificação passar
+             Lança ErroSemantico se a variável não estiver inicializada
+    """
+    
+    if simbolos[nome_var]['valor'] is None:
+        raise ErroSemantico(f"Erro semântico na linha {linha}: variável '{nome_var}' usada antes de ser inicializada")
+    return
 
+def verificar_compatibilidade_tipos(tipo_destino, valor, linha=0, modo="atribuicao"):
+    """
+    Verifica a compatibilidade entre um tipo de destino e um valor,
+    realizando a conversão apropriada quando possível.
+    
+    Args:
+        tipo_destino: Tipo da variável de destino ('int', 'float', 'char')
+        valor: Valor a ser verificado e convertido
+        linha: Número da linha para mensagens de erro
+        modo: Contexto da verificação ('atribuicao' ou 'operacao')
+    
+    Returns:
+        O valor convertido para o tipo apropriado
+        
+    Raises:
+        ErroSemantico: Se a conversão não for possível
+    """
+    # Determinar o tipo do valor
+    tipo_valor = None
+    valor_convertido = None
+    
+    # Se o valor é um ID, obter seu tipo e valor da tabela de símbolos
+    if isinstance(valor, str) and valor in simbolos:
+        tipo_valor = simbolos[valor]['tipo']
+        valor_original = simbolos[valor]['valor']
+    else:
+        valor_original = valor
+        # Determinar o tipo do literal
+        if isinstance(valor, str): #Verificar essa implementacao
+            if valor.isdigit():
+                tipo_valor = "int"
+            elif '.' in valor and any(c.isdigit() for c in valor):
+                tipo_valor = "float"
+            else:
+                tipo_valor = "char"
+        else:
+            if valor.isdigit(): # Verificar essa implementacao
+                tipo_valor = "int"
+            elif '.' in valor and any(c.isdigit() for c in valor):
+                tipo_valor = "float"
+            else:
+                tipo_valor = "char"
+    
+    # Tentar realizar a conversão
+    try:
+        if tipo_destino == "int":
+            if tipo_valor == "int":
+                valor_convertido = int(valor_original)
+            elif tipo_valor == "float":
+                # Conversão de float para int (com potencial perda de precisão)
+                valor_convertido = int(float(valor_original))
+                if modo == "atribuicao":
+                    print(f"Aviso: Conversão de float para int na linha {linha} (possível perda de precisão)")
+            else:
+                raise ErroSemantico(f"Erro semântico na linha {linha}: não é possível converter '{tipo_valor}' para 'int'")
+        
+        elif tipo_destino == "float":
+            if tipo_valor in ["int", "float"]:
+                valor_convertido = float(valor_original)
+            else:
+                raise ErroSemantico(f"Erro semântico na linha {linha}: não é possível converter '{tipo_valor}' para 'float'")
+        
+        elif tipo_destino == "char":
+            # Implementação simplificada para char
+            valor_convertido = str(valor_original)
+        
+        return valor_convertido
+        
+    except (ValueError, TypeError):
+        raise ErroSemantico(f"Erro semântico na linha {linha}: valor '{valor_original}' incompatível com o tipo '{tipo_destino}'")
 
 contexto = 0
 
@@ -92,32 +205,13 @@ def t_error(t):
     print("Illegal character %s" % t.value[0])
     t.lexer.skip(1)
 
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+
 # Constroi o analisador léxico
 lexer = lex.lex()
-
-
-def verificar_tipo_token(token, lexer):
-    '''Verifica qual o tipo do token e retorna o tipo correspondente'''
-    while True:
-        tok = lexer.token()
-        if not tok:
-            break  # Fim dos tokens
-        print(tok)
-        if tok.value == token:
-            print(f"Token encontrado: {tok.type} - {tok.value}")
-            return tok.type
-    return None
-    # Percorre os tokens do lexer e verifica se o token existe
     
-
-# Define-se os procedimentos associados as regras de
-# produção da gramática (também é quando definimos a gramática)
-
-#def p_<nome>(p):
-#    '<não_terminal> : <TERMINAIS> <nao_terminais> ... ' 
-#    <ações semânticas>
-# -> ''' para regras com |
-
 def p_inicial(p):
     '''inicial : INT MAIN LPAREN RPAREN bloco_principal SEMICOLON'''
     print("Reconheci INICIAL")
@@ -132,9 +226,9 @@ def p_bloco_principal(p):
 #    print("Reconheci Bloco Principal")
     
 def p_corpo(p):
-    '''corpo : comando corpo
-             | comando'''
-#    print("Reconheci corpo")
+    '''corpo : comando
+             | corpo comando'''
+    print("Reconheci corpo")
 
 def p_comando(p):
     '''comando : declaracoes
@@ -142,7 +236,7 @@ def p_comando(p):
                | bloco_if
                | bloco_for
                | expressao'''
-#    print("Reconheci comando")
+    print("Reconheci comando")
 
 def p_expressao(p):
     '''expressao : atribuicao'''
@@ -153,72 +247,72 @@ def p_declaracoes(p):
                 | tipos declaracoes_linha SEMICOLON
                 | tipos ID EQUALS values SEMICOLON
                 | tipos ID EQUALS ID SEMICOLON
-                | tipos ID EQUALS operacao_aritmetica SEMICOLON
-                | tipos ID SEMICOLON declaracoes
-                | tipos declaracoes_linha SEMICOLON declaracoes
-                | tipos ID EQUALS values SEMICOLON declaracoes
-                | tipos ID EQUALS ID SEMICOLON declaracoes
-                | tipos ID EQUALS operacao_aritmetica SEMICOLON declaracoes'''
+                | tipos ID EQUALS operacao_aritmetica SEMICOLON'''
+
     # Armazena o tipo para uso posterior
+    print("Entrou no bloco de declaracoes")
     tipo = p[1]
     
     # Caso de declaração com múltiplas variáveis (tipos declaracoes_linha SEMICOLON)
+    # Adicionar um try except?
     if len(p) >= 3 and p[2] is None:
-        print(simbolos.keys())
-        print(simbolos.items())
-        for chave, valor in simbolos.items():
-            # Verificando se o atributo em_linha é True
-            if valor.get('em_linha') == True:
-                # Atualizando o atributo tipo
-                simbolos[chave]['tipo'] = tipo
-                print(f"Atualizado tipo da variável '{chave}' para '{tipo}'")
-        print('Declaracao realizada em linha')
-    
+        try:
+            print(simbolos.keys())
+            print(simbolos.items())
+            for chave, valor in simbolos.items():
+                # Verificando se o atributo em_linha é True
+                if valor.get('em_linha') == True:
+                    # Atualizando o atributo tipo
+                    simbolos[chave]['tipo'] = tipo
+                    print(f"Atualizado tipo da variável '{chave}' para '{tipo}'")
+            print('Declaracao realizada em linha')
+        except ErroSemantico as e:
+            handle_semantic_error(e)
     # Caso de declaração simples (tipos ID SEMICOLON)
-    elif len(p) >= 3 and isinstance(p[2], str) and p[3] == ";":
+    elif len(p) >= 3 and p[3] == ";": # Abordagem disfuncional uma vez que isinstance sempre retorna True, ja que todos os termos sao strings - realizar testes
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
             simbolos[p[2]] = {'valor': None, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada variável '{p[2]}' do tipo '{tipo}'")
         except ErroSemantico as e:
-            # Cria um token de erro com a mensagem
-            error_token = yacc.YaccSymbol()
-            error_token.type = 'ERROR'
-            error_token.value = 'error'
-            error_token.error_message = str(e)
-            
-            # Substitui o token atual pelo token de erro
-            p_error(error_token)
-            
-            # Interrompe o parsing
-            raise SyntaxError("Parsing interrompido devido a erro semântico")
+            handle_semantic_error(e)
     
-    # Caso de declaração com inicialização
-    elif len(p) >= 5 and p[3] == '=':
+    # Caso de declaracao com  inicializacao e operacao aritmetica (tipos ID EQUALS operacao_aritmetica SEMICOLON)
+    elif len(p) >= 5 and p[3] == '=' and p.slice[4].type == 'operacao_aritmetica':
         try:
             verificar_variavel_redeclarada(p[2], p.lineno(2))
-            verificar_tipo_token(p[4], lexer)
-            if isinstance(p[4], str):
-                print("Teste0")
-                verificar_variavel_usada(p[4], p.lineno(4))
-
-            valor = p[4]
+            valor = verificar_compatibilidade_tipos(p[1], p[4], p.lineno(4), "declaracao")
             simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
             print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
         except ErroSemantico as e:
-            # Cria um token de erro com a mensagem
-            error_token = yacc.YaccSymbol()
-            error_token.type = 'ERROR'
-            error_token.value = 'error'
-            error_token.error_message = str(e)
+            handle_semantic_error(e)
+    
+    # Caso de declaração com inicialização (tipos ID EQUALS values SEMICOLON ou tipos ID EQUALS ID SEMICOLON)
+    elif len(p) >= 5 and p[3] == '=':
+        try:
+            verificar_variavel_redeclarada(p[2], p.lineno(2))
+            print(f"p[4]: '{p.slice[4].value}' - '{p.slice[4].type}'")
+            if p.slice[4].type == 'ID':
+                # Implementar funcao para checar compatibilidade entre 'tipo_declarado' e o tipo do literal
+                verificar_variavel_usada(p[4], p.lineno(4))
+                valor = verificar_compatibilidade_tipos(p[1], p[4], p.lineno(4), "declaracao")
+
+            if p.slice[4].type == 'values':
+                # Implementar funcao para checar compatibilidade entre 'tipo_declarado' e o tipo do literal
+                print("Verificando tipo de literal:", p.slice[4].value)
+                valor = verificar_compatibilidade_tipos(p[1], p[4], p.lineno(4), "declaracao")
+                
+            if p.slice[4].type == 'operacao_aritmetica':
+                # Idealmente, checar compatibilidade entre 'tipo_declarado' e o resultado da operação
+                print("Verificando tipo do reseultado da operacao aritmetica:", p.slice[4].value)
+                valor = p[4]
             
-            # Substitui o token atual pelo token de erro
-            p_error(error_token)
+            simbolos[p[2]] = {'valor': valor, 'tipo': tipo, 'contexto': get_contexto(), 'em_linha': False}
+            print(f"Declarada e inicializada variável '{p[2]}' do tipo '{tipo}' com valor '{valor}'")
+        except ErroSemantico as e:
+           handle_semantic_error(e)
             
-            # Interrompe o parsing
-            raise SyntaxError("Parsing interrompido devido a erro semântico")
-            
-    print(f"Reconheci Declarações {tipo} {p[2] if isinstance(p[2], str) else ''} {p[3]}")
+    print(f"Reconheci Declarações")
 
 def p_declaracao_linha(p):
     '''declaracoes_linha : ID COMMA declaracoes_linha
@@ -227,28 +321,12 @@ def p_declaracao_linha(p):
     try:
         verificar_variavel_redeclarada(p[1], p.lineno(1))
         simbolos[p[1]] = {'valor': None, 'tipo': None, 'contexto': get_contexto(), 'em_linha': True}
-        print(f"Declarada variável '{p[1]}'")
     except ErroSemantico as e:
-        # Cria um token de erro com a mensagem
-        error_token = yacc.YaccSymbol()
-        error_token.type = 'ERROR'
-        error_token.value = 'error'
-        error_token.error_message = str(e)
-        
-        # Substitui o token atual pelo token de erro
-        p_error(error_token)
-        
-        # Interrompe o parsing
-        raise SyntaxError("Parsing interrompido devido a erro semântico")
+        handle_semantic_error(e)
 
+    p[0] = None
     
-    # Propaga os IDs para o nó pai
-    if len(p) > 2:
-        p[0] = None  # Sinaliza que é uma declaração em linha
-    else:
-        p[0] = None  # Sinaliza que é uma declaração em linha
-    
-    print(f"Reconheci Declarações linha {p[1]}")
+    print(f"Reconheci Declarações linha - variavel: {p[1]}")
 
 def p_bloco_while(p):
     '''bloco_while : WHILE LPAREN condicao RPAREN LBRACES corpo RBRACES'''
@@ -258,8 +336,6 @@ def p_bloco_if(p):
     '''bloco_if : IF LPAREN condicao RPAREN LBRACES corpo RBRACES
                 | IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE LBRACES corpo RBRACES
                 | IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE bloco_if'''
-#                | IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE IF LPAREN condicao RPAREN LBRACES corpo RBRACES
-#                | IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE IF LPAREN condicao RPAREN LBRACES corpo RBRACES ELSE LBRACES corpo RBRACES'''
 #    print("Reconheci bloco if")
 
 def p_bloco_for(p):
@@ -281,31 +357,30 @@ def p_atribuicao(p):
     ''' atribuicao : ID EQUALS values SEMICOLON
                 | ID EQUALS ID SEMICOLON
                 | ID EQUALS operacao_aritmetica SEMICOLON'''
-    print("Reconheci bloco atribuicao", p[1], p[2])
-    # Verifica se a variável foi declarada antes de atribuir
+    
+    print("Entrou no bloco de atribuicoes")
     try:
-        print("Teste")
+        tipo = simbolos[p[1]]['tipo']
         verificar_variavel_usada(p[1], p.lineno(1))
-        # Verifica se o termo a ser atribuído é uma variável
-        if len(p) >= 4 and isinstance(p[3], str):
-            print("Teste2")
-            verificar_variavel_usada(p[3], p.lineno(3))
-        # Atribui o valor à variável    
         if len(p) >= 4:
-            valor = p[3]
+            if p.slice[3].type == 'ID':
+                verificar_variavel_usada(p[3], p.lineno(3))
+                verificar_variavel_inicializada(p[3], p.lineno(3))
+                print("Verificando tipo da variavel:", p.slice[1].value)
+                valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
+            if p.slice[3].type == 'values':
+                print("Verificando tipo de literal:", p.slice[3].value)
+                valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
+                
+            if p.slice[3].type == 'operacao_aritmetica':
+                print("Verificando tipo do resultado da operacao aritmetica:", p.slice[3].value)
+                valor = verificar_compatibilidade_tipos(tipo, p[3], p.lineno(4))
+
             simbolos[p[1]]['valor'] = valor
+
     except ErroSemantico as e:
-        # Cria um token de erro com a mensagem
-        error_token = yacc.YaccSymbol()
-        error_token.type = 'ERROR'
-        error_token.value = 'error'
-        error_token.error_message = str(e)
-        
-        # Substitui o token atual pelo token de erro
-        p_error(error_token)
-        
-        # Interrompe o parsing
-        raise SyntaxError("Parsing interrompido devido a erro semântico")
+        handle_semantic_error(e)
+    print("Reconheci bloco atribuicao", p[1], p[2])
 
 # | tipos ID EQUALS values SEMICOLON
 # | tipos ID EQUALS ID SEMICOLON
@@ -316,7 +391,113 @@ def p_operacao_aritmetica(p):
                     | ID operadores_aritmeticos values
                     | values operadores_aritmeticos ID
                     | values operadores_aritmeticos values'''
-#    print("Reconheci bloco operacoes aritmeticas")
+    print("Entrou no bloco de operacao_aritmetica")
+    try:         
+        if p.slice[1].type == 'ID':
+            verificar_variavel_usada(p[1], p.lineno(1))
+            verificar_variavel_inicializada(p[1], p.lineno(3))
+            val1, tipo1 = simbolos[p[1]]['valor'], simbolos[p[1]]['tipo']
+        else:  # Veio de 'values'
+            val1 = p[1]
+            # Determinar o tipo com base no valor # tipo_de_literal(p[1])  função hipotética
+            print(isinstance(p[1], int), p[1].isdigit())
+            if p[1].isdigit(): #Abordagem desfuncional;
+                tipo1 = "int"
+            elif '.' in p[1] and any(c.isdigit() for c in p[1]):
+                tipo1 = "float"
+            else:
+                tipo1 = "char"  # ou outro tipo adequado
+            print('Tipo de Literal: ', tipo1)
+    
+        # Verificar o segundo operando se for um ID
+        if p.slice[3].type == 'ID':
+            verificar_variavel_usada(p[3], p.lineno(3))
+            verificar_variavel_inicializada(p[3], p.lineno(1))
+            val2, tipo2 = simbolos[p[3]]['valor'], simbolos[p[3]]['tipo']
+        else:  # Veio de 'values'
+            val2 = p[3]
+            # Determinar o tipo com base no valor
+            print(isinstance(p[3], int), p[3].isdigit())
+            if p[3].isdigit():
+                tipo2 = "int"
+            elif '.' in p[3] and any(c.isdigit() for c in p[3]):
+                tipo2 = "float"
+            else:
+                tipo2 = "char"
+            print('Tipo de Literal: ', tipo2)
+
+        if tipo1 == "float" or tipo2 == "float":
+            tipo_resultado = "float"
+        else:
+            tipo_resultado = "int"
+
+        # Converter os valores para o tipo apropriado
+        val1_convertido = verificar_compatibilidade_tipos(tipo_resultado, val1, p.lineno(1), "operacao")
+        val2_convertido = verificar_compatibilidade_tipos(tipo_resultado, val2, p.lineno(3), "operacao")
+        
+        if tipo_resultado == "int":
+            match p[2]:
+                case '+':
+                    resultado = val1_convertido + val2_convertido
+                case '-':
+                    resultado = val1_convertido - val2_convertido
+                case '*':
+                    resultado = val1_convertido * val2_convertido
+                case '/':
+                    if val2_convertido == 0:
+                        raise ErroSemantico(f"Erro semântico na linha {p.lineno(3)}: divisão por zero")
+                    resultado = val1_convertido // val2_convertido
+        elif tipo_resultado == "float":
+            match p[2]:
+                case '+':
+                    resultado = val1_convertido + val2_convertido
+                case '-':
+                    resultado = val1_convertido - val2_convertido
+                case '*':
+                    resultado = val1_convertido * val2_convertido
+                case '/':
+                    if val2_convertido == 0.0:
+                        raise ErroSemantico(f"Erro semântico na linha {p.lineno(3)}: divisão por zero")
+                    resultado = val1_convertido / val2_convertido
+        
+        p[0] = resultado
+
+        #try:
+        #    resultado = None
+#
+        #    if tipo1 == 'int' and tipo2 == 'int':
+        #        match p[2]:
+        #            case '+':
+        #                resultado = int(val1) + int(val2)
+        #            case '-':
+        #                resultado = int(val1) - int(val2)
+        #            case '*':
+        #                resultado = int(val1) * int(val2)
+        #            case '/':
+        #                resultado = int(val1) / int(val2)
+        #            case '^':
+        #                resultado = int(val1) ** int(val2)
+        #    elif tipo1 == 'float' and tipo2 == 'float':
+        #        match p[2]:
+        #            case '+':
+        #                resultado = float(val1) + float(val2)
+        #            case '-':
+        #                resultado = float(val1) - float(val2)
+        #            case '*':
+        #                resultado = float(val1) * float(val2)
+        #            case '/':
+        #                resultado = float(val1) / float(val2)
+        #            case '^':
+        #                resultado = float(val1) ** float(val2)
+        #    else:
+        #        #Erro caso sejam tipos diferentes que nao podem ser convertidos.
+        #        resultado = 'resultado_operacao_aritmetica_nao_implementada'  # Ou algum valor padrão, se necessário
+#
+        #    p[0] = resultado
+        #except (ValueError, TypeError):
+        #    p[0] = None
+    except ErroSemantico as e:
+        handle_semantic_error(e)
 
 def p_condicao(p):
     '''condicao : values operadores_comparativos values
@@ -340,6 +521,7 @@ def p_operadores_aritmeticos(p):
                             | TIMES
                             | DIVIDE
                             | POWER'''
+    p[0] = p[1]
 #    print("Reconheci operadores aritmeticos")
 
 def p_tipos(p):
@@ -359,7 +541,7 @@ def p_error(p):
         # Erro semântico personalizado
         print(p.error_message)
     elif p:
-        print(f"Erro de sintaxe na linha {p.lineno}: token '{p.value}'")
+        print(f"Erro de sintaxe no token: '{p.value}'")
         print(f"Tipo do token: {p.type}")
     else:
         print("Erro de sintaxe no final do arquivo (EOF)")  
@@ -373,18 +555,18 @@ logging.basicConfig(
 )
 
 # entrada do arquivo
-file = open("input7.txt",'r')
+file = open("input8.txt",'r')
 data = file.read()
 
 # data = 'int main();'
 
 # string de teste como entrada do analisador léxico
-lexer.input(data)
+#lexer.input(data)
 
 # Tokenização
-for tok in lexer:
-    print(tok)
-    print(tok.type, tok.value, tok.lineno, tok.lexpos)
+#for tok in lexer:
+#    print(tok)
+#    print(tok.type, tok.value, tok.lineno, tok.lexpos)
 
 # chama o parser\
 try:
