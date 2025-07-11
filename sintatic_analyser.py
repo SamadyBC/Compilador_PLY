@@ -101,6 +101,12 @@ def verificar_compatibilidade_tipos(tipo_destino, valor, linha=0, modo="atribuic
                 tipo_valor = "float"
             else:
                 tipo_valor = "char"
+        elif isinstance(valor, int):
+            tipo_valor = "int"
+        elif isinstance(valor, float):
+            tipo_valor = "float"
+        elif isinstance(valor, str) and len(valor) == 1:  # Considerando um único caractere como 'char'
+            tipo_valor = "char"
         else:
             if valor.isdigit(): # Verificar essa implementacao
                 tipo_valor = "int"
@@ -417,7 +423,7 @@ def p_operacao_aritmetica(p):
         else:  # Veio de 'values'
             val2 = p[3]
             # Determinar o tipo com base no valor
-            print(isinstance(p[3], int), p[3].isdigit())
+            print(p[3], isinstance(p[3], int), p[3].isdigit())
             if p[3].isdigit():
                 tipo2 = "int"
             elif '.' in p[3] and any(c.isdigit() for c in p[3]):
@@ -555,10 +561,10 @@ logging.basicConfig(
 )
 
 # entrada do arquivo
-file = open("input8.txt",'r')
+file = open("input.txt",'r')
 data = file.read()
 
-# data = 'int main();'
+# data = 'int main( );'
 
 # string de teste como entrada do analisador léxico
 #lexer.input(data)
